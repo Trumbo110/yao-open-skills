@@ -41,6 +41,32 @@ SAGE = "#7d8b70"
 RUST = "#a45d4f"
 STONE = "#87867f"
 PALETTE = [BRAND, WARM, SAGE, RUST, BRAND_LIGHT, "#6f675a", "#9d8062", "#596b7f"]
+TREEMAP_LABEL_FORMATTER = (
+    "function(params){"
+    "var name=String(params.name||'').replace(/\\s+/g,'');"
+    "if(!name){return '';}"
+    "if(name.indexOf('/')>-1){return name.split('/').filter(Boolean).slice(0,2).join('\\n');}"
+    "if(/^[A-Za-z0-9._-]+$/.test(name)){return name.length>10?name.slice(0,10):name;}"
+    "if(name.length<=2){return name;}"
+    "if(name.length<=4){return name.slice(0,2)+'\\n'+name.slice(2);}"
+    "if(name.length<=6){return name.slice(0,3)+'\\n'+name.slice(3);}"
+    "return name.slice(0,3)+'\\n'+name.slice(3,6);"
+    "}"
+)
+TREEMAP_LABEL_LAYOUT = (
+    "function(params){"
+    "var rect=params&&params.rect;"
+    "if(rect&&(rect.width<34||rect.height<24)){return {hide:true};}"
+    "return {};"
+    "}"
+)
+TREEMAP_TOOLTIP_FORMATTER = (
+    "function(params){"
+    "var name=String(params.name||'');"
+    "var value=params.value==null?0:params.value;"
+    "return name+': '+value;"
+    "}"
+)
 
 
 class WeReadError(RuntimeError):
@@ -1224,7 +1250,16 @@ def axis_text() -> dict[str, Any]:
 
 
 def chart_base(title: str, subtitle: str, option: dict[str, Any], source: str, empty: bool = False) -> dict[str, Any]:
-    return {"id": slug(title), "title": title, "subtitle": subtitle, "source": source, "option": option, "empty": empty}
+    return {"id": slug(title), "title": title, "subtitle": subtitle, "source": source, "option": option, "empty": empty, "kind": chart_kind(option)}
+
+
+def chart_kind(option: dict[str, Any]) -> str:
+    series = option.get("series") if isinstance(option, dict) else None
+    if isinstance(series, list) and series and isinstance(series[0], dict):
+        kind = str(series[0].get("type") or "custom")
+        kind = re.sub(r"([a-z])([A-Z])", r"\1-\2", kind).lower()
+        return re.sub(r"[^a-z0-9-]+", "-", kind).strip("-") or "custom"
+    return "custom"
 
 
 def slug(text: str) -> str:
@@ -1243,7 +1278,7 @@ def build_charts(data: dict[str, Any]) -> list[dict[str, Any]]:
             {
                 "color": [BRAND, WARM],
                 "tooltip": {"trigger": "axis"},
-                "grid": {"left": 46, "right": 24, "top": 34, "bottom": 54},
+                "grid": {"left": 46, "right": 24, "top": 34, "bottom": 54, "containLabel": True},
                 "xAxis": {"type": "category", "data": months, "axisLabel": axis_text()},
                 "yAxis": {"type": "value", "name": "小时", "axisLabel": axis_text(), "splitLine": {"lineStyle": {"color": "#e8e6dc"}}},
                 "series": [{"type": "bar", "name": "阅读小时", "data": data["series"]["monthlyReadHours"], "barMaxWidth": 18}],
@@ -1277,7 +1312,7 @@ def build_charts(data: dict[str, Any]) -> list[dict[str, Any]]:
             "观察哪些月份的哪些星期更容易读书。",
             {
                 "tooltip": {"position": "top"},
-                "grid": {"left": 72, "right": 18, "top": 18, "bottom": 70},
+                "grid": {"left": 72, "right": 18, "top": 18, "bottom": 70, "containLabel": True},
                 "xAxis": {"type": "category", "data": data["series"]["weekdayNames"], "axisLabel": axis_text()},
                 "yAxis": {"type": "category", "data": months, "axisLabel": axis_text()},
                 "visualMap": {"min": 0, "max": max([v[2] for v in data["series"]["weekdayHeat"]] or [1]), "orient": "horizontal", "left": "center", "bottom": 0, "inRange": {"color": ["#ede9dd", "#d1b98b", BRAND]}},
@@ -1294,7 +1329,7 @@ def build_charts(data: dict[str, Any]) -> list[dict[str, Any]]:
             {
                 "color": [BRAND],
                 "tooltip": {"trigger": "axis"},
-                "grid": {"left": 48, "right": 22, "top": 24, "bottom": 50},
+                "grid": {"left": 48, "right": 22, "top": 24, "bottom": 50, "containLabel": True},
                 "xAxis": {"type": "time", "axisLabel": axis_text()},
                 "yAxis": {"type": "value", "name": "小时", "axisLabel": axis_text(), "splitLine": {"lineStyle": {"color": "#e8e6dc"}}},
                 "series": [{"name": "累计小时", "type": "line", "smooth": True, "areaStyle": {"color": "#E4ECF5"}, "data": data["series"]["cumulativeReadHours"]}],
@@ -1350,7 +1385,7 @@ def build_charts(data: dict[str, Any]) -> list[dict[str, Any]]:
             {
                 "color": [BRAND],
                 "tooltip": {"formatter": "{b}<br/>进度: {@[0]}%<br/>笔记: {@[1]}条"},
-                "grid": {"left": 46, "right": 24, "top": 24, "bottom": 44},
+                "grid": {"left": 46, "right": 24, "top": 24, "bottom": 44, "containLabel": True},
                 "xAxis": {"type": "value", "name": "进度%", "min": 0, "max": 100, "axisLabel": axis_text(), "splitLine": {"lineStyle": {"color": "#e8e6dc"}}},
                 "yAxis": {"type": "value", "name": "笔记", "axisLabel": axis_text(), "splitLine": {"lineStyle": {"color": "#e8e6dc"}}},
                 "series": [{"type": "scatter", "symbolSize": 8, "data": data["notes"]["progressScatter"]}],
@@ -1369,7 +1404,7 @@ def line_option(labels: list[str], values: list[Any], name: str) -> dict[str, An
     return {
         "color": [BRAND],
         "tooltip": {"trigger": "axis"},
-        "grid": {"left": 46, "right": 24, "top": 26, "bottom": 54},
+        "grid": {"left": 46, "right": 24, "top": 26, "bottom": 54, "containLabel": True},
         "xAxis": {"type": "category", "data": labels, "axisLabel": axis_text()},
         "yAxis": {"type": "value", "name": name, "axisLabel": axis_text(), "splitLine": {"lineStyle": {"color": "#e8e6dc"}}},
         "series": [{"name": name, "type": "line", "smooth": True, "symbolSize": 5, "data": values}],
@@ -1380,7 +1415,7 @@ def simple_bar(labels: list[str], values: list[Any], name: str) -> dict[str, Any
     return {
         "color": [BRAND],
         "tooltip": {"trigger": "axis"},
-        "grid": {"left": 42, "right": 24, "top": 26, "bottom": 44},
+        "grid": {"left": 42, "right": 24, "top": 26, "bottom": 44, "containLabel": True},
         "xAxis": {"type": "category", "data": labels, "axisLabel": axis_text()},
         "yAxis": {"type": "value", "name": name, "axisLabel": axis_text(), "splitLine": {"lineStyle": {"color": "#e8e6dc"}}},
         "series": [{"type": "bar", "data": values, "barMaxWidth": 22}],
@@ -1392,7 +1427,7 @@ def stacked_bar_option(labels: list[str], series: list[tuple[str, list[Any]]]) -
         "color": PALETTE,
         "tooltip": {"trigger": "axis", "axisPointer": {"type": "shadow"}},
         "legend": {"top": 0, "textStyle": axis_text()},
-        "grid": {"left": 46, "right": 24, "top": 34, "bottom": 54},
+        "grid": {"left": 46, "right": 24, "top": 34, "bottom": 54, "containLabel": True},
         "xAxis": {"type": "category", "data": labels, "axisLabel": axis_text()},
         "yAxis": {"type": "value", "axisLabel": axis_text(), "splitLine": {"lineStyle": {"color": "#e8e6dc"}}},
         "series": [{"name": name, "type": "bar", "stack": "total", "data": values, "barMaxWidth": 18} for name, values in series],
@@ -1404,7 +1439,7 @@ def grouped_bar_option(labels: list[str], series: list[tuple[str, list[Any]]]) -
         "color": PALETTE,
         "tooltip": {"trigger": "axis"},
         "legend": {"top": 0, "textStyle": axis_text()},
-        "grid": {"left": 46, "right": 24, "top": 34, "bottom": 44},
+        "grid": {"left": 46, "right": 24, "top": 34, "bottom": 44, "containLabel": True},
         "xAxis": {"type": "category", "data": labels, "axisLabel": axis_text()},
         "yAxis": {"type": "value", "axisLabel": axis_text(), "splitLine": {"lineStyle": {"color": "#e8e6dc"}}},
         "series": [{"name": name, "type": "bar", "data": values, "barMaxWidth": 22} for name, values in series],
@@ -1417,7 +1452,7 @@ def horizontal_bar(rows: list[dict[str, Any]], name_key: str, value_key: str, un
     return {
         "color": [BRAND],
         "tooltip": {"trigger": "axis", "axisPointer": {"type": "shadow"}, "valueFormatter": f"function(v){{return v + '{unit}'}}"},
-        "grid": {"left": 128, "right": 24, "top": 24, "bottom": 36},
+        "grid": {"left": 128, "right": 24, "top": 24, "bottom": 36, "containLabel": True},
         "xAxis": {"type": "value", "axisLabel": axis_text(), "splitLine": {"lineStyle": {"color": "#e8e6dc"}}},
         "yAxis": {"type": "category", "data": labels, "axisLabel": {**axis_text(), "width": 112, "overflow": "truncate"}},
         "series": [{"type": "bar", "data": values, "barMaxWidth": 14}],
@@ -1442,19 +1477,54 @@ def pie_option(rows: list[dict[str, Any]], value_key: str) -> dict[str, Any]:
     }
 
 
+def treemap_data(rows: list[dict[str, Any]], value_key: str, max_items: int = 14) -> list[dict[str, Any]]:
+    compact_rows = [
+        {"name": str(row.get("name") or "未分类"), "value": row.get(value_key) or 0}
+        for row in rows
+        if (row.get(value_key) or 0) > 0
+    ]
+    if len(compact_rows) <= max_items:
+        return compact_rows
+    head = compact_rows[: max_items - 1]
+    other_value = sum(row["value"] for row in compact_rows[max_items - 1 :])
+    if other_value:
+        head.append({"name": "其他", "value": other_value})
+    return head
+
+
 def treemap_option(rows: list[dict[str, Any]], value_key: str) -> dict[str, Any]:
     return {
         "color": PALETTE,
-        "tooltip": {"formatter": "{b}: {c}"},
+        "tooltip": {"formatter": TREEMAP_TOOLTIP_FORMATTER},
         "series": [
             {
                 "type": "treemap",
+                "left": 0,
+                "right": 0,
+                "top": 0,
+                "bottom": 0,
+                "width": "100%",
+                "height": "100%",
                 "roam": False,
+                "nodeClick": False,
+                "visibleMin": 1,
+                "squareRatio": 1.12,
                 "breadcrumb": {"show": False},
-                "label": {"color": "#faf9f5"},
+                "label": {
+                    "show": True,
+                    "color": "#faf9f5",
+                    "fontSize": 13,
+                    "fontWeight": 600,
+                    "lineHeight": 17,
+                    "overflow": "break",
+                    "minMargin": 4,
+                    "formatter": TREEMAP_LABEL_FORMATTER,
+                },
+                "labelLayout": TREEMAP_LABEL_LAYOUT,
                 "upperLabel": {"show": False},
-                "itemStyle": {"borderColor": "#faf9f5", "borderWidth": 2},
-                "data": [{"name": row.get("name"), "value": row.get(value_key) or 0} for row in rows],
+                "itemStyle": {"borderColor": "#faf9f5", "borderWidth": 3, "gapWidth": 2},
+                "emphasis": {"label": {"show": True}},
+                "data": treemap_data(rows, value_key),
             }
         ],
     }
@@ -1513,7 +1583,7 @@ def build_html(data: dict[str, Any]) -> str:
     ).replace("</", "<\\/")
     chart_card_items = [
         f"""
-        <article class="chart-card" data-chart-card="{chart['id']}">
+        <article class="chart-card chart-card--{escape_html(chart.get('kind') or 'custom')}" data-chart-card="{chart['id']}">
           <div class="chart-head">
             <div>
               <h3>{escape_html(chart['title'])}</h3>
@@ -1621,13 +1691,15 @@ def build_html(data: dict[str, Any]) -> str:
   .insights {{ background:var(--ivory); border:1px solid var(--border); border-radius:8px; padding:22px 24px; }}
   .insights ul {{ margin:0; padding-left:22px; }}
   .insights li {{ margin:7px 0; color:var(--charcoal); }}
-  .chart-grid {{ display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:18px; }}
-  .chart-card {{ background:var(--ivory); border:1px solid var(--border); border-radius:8px; padding:16px; min-width:0; }}
+  .chart-grid {{ display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:18px; align-items:stretch; }}
+  .chart-card {{ background:var(--ivory); border:1px solid var(--border); border-radius:8px; padding:16px; min-width:0; overflow:hidden; display:flex; flex-direction:column; }}
   .chart-head {{ display:flex; justify-content:space-between; gap:16px; align-items:flex-start; margin-bottom:8px; min-height:64px; }}
+  .chart-head > div {{ min-width:0; }}
   .chart-head h3 {{ margin:0 0 5px; font-size:18px; line-height:1.2; color:var(--near-black); }}
   .chart-head p {{ margin:0; color:var(--olive); font-size:13px; line-height:1.35; }}
   .chart-head span {{ flex:0 0 auto; max-width:180px; color:var(--stone); font-size:11px; line-height:1.3; text-align:right; overflow-wrap:anywhere; }}
-  .chart {{ height:300px; width:100%; }}
+  .chart {{ height:320px; width:100%; min-width:0; flex:0 0 auto; }}
+  .chart-card--treemap .chart, .chart-card--word-cloud .chart {{ height:348px; }}
   .empty-state {{ display:none; height:300px; align-items:center; justify-content:center; color:var(--stone); border:1px dashed var(--border); border-radius:6px; text-align:center; padding:20px; }}
   .chart-card.is-empty .chart {{ display:none; }}
   .chart-card.is-empty .empty-state {{ display:flex; }}
@@ -1737,6 +1809,13 @@ def build_html(data: dict[str, Any]) -> str:
 <script>
 const REPORT_CONTEXT = {data_json};
 const CHARTS = {charts_json};
+const CHART_REGISTRY = [];
+const CHART_OBSERVER = window.ResizeObserver ? new ResizeObserver((entries) => {{
+  entries.forEach((entry) => {{
+    const chart = entry.target.__wereadChart;
+    if (chart) chart.resize();
+  }});
+}}) : null;
 function reviveFunctions(option) {{
   if (!option || typeof option !== 'object') return option;
   for (const key of Object.keys(option)) {{
@@ -1748,6 +1827,13 @@ function reviveFunctions(option) {{
     }}
   }}
   return option;
+}}
+function resizeCharts() {{
+  CHART_REGISTRY.forEach(chart => chart.resize());
+}}
+function scheduleChartResize() {{
+  window.requestAnimationFrame(resizeCharts);
+  window.setTimeout(resizeCharts, 180);
 }}
 function bootCharts() {{
   if (!window.echarts) {{
@@ -1764,10 +1850,17 @@ function bootCharts() {{
     }}
     const chart = echarts.init(el, null, {{ renderer: 'canvas' }});
     chart.setOption(reviveFunctions(item.option));
-    window.addEventListener('resize', () => chart.resize());
+    el.__wereadChart = chart;
+    CHART_REGISTRY.push(chart);
+    if (CHART_OBSERVER) CHART_OBSERVER.observe(el);
   }});
+  scheduleChartResize();
 }}
 bootCharts();
+window.addEventListener('resize', scheduleChartResize, {{ passive: true }});
+if (document.fonts && document.fonts.ready) {{
+  document.fonts.ready.then(scheduleChartResize).catch(() => {{}});
+}}
 </script>
 </body>
 </html>
@@ -1793,6 +1886,16 @@ def validate_output(html: str, data: dict[str, Any]) -> list[str]:
     for token in forbidden:
         if token in html:
             errors.append(f"forbidden token in HTML: {token}")
+    for chart in data.get("charts") or []:
+        option = chart.get("option") or {}
+        for series in option.get("series") or []:
+            if not isinstance(series, dict) or series.get("type") != "treemap":
+                continue
+            if any(series.get(edge) != 0 for edge in ("left", "right", "top", "bottom")):
+                errors.append(f"treemap must fill chart bounds: {chart.get('title')}")
+            label = series.get("label") or {}
+            if not label.get("formatter") or not series.get("labelLayout"):
+                errors.append(f"treemap label guard missing: {chart.get('title')}")
     return errors
 
 
