@@ -1903,16 +1903,16 @@ def build_html(data: dict[str, Any]) -> str:
     border-bottom:1px solid var(--border);
     padding:48px 0 34px;
   }}
-  .cover > div, .section-title, .insights, .metric, .chart-card {{ min-width:0; }}
+  .cover-content, .section-title, .insights, .metric, .chart-card {{ min-width:0; width:100%; }}
   .eyebrow {{ color:var(--brand); font-size:13px; letter-spacing:.08em; text-transform:uppercase; margin-bottom:18px; }}
-  h1 {{ font-size:clamp(38px, 6vw, 76px); line-height:1.08; margin:0 0 22px; max-width:920px; }}
-  .subtitle {{ max-width:760px; color:var(--olive); font-size:20px; line-height:1.5; margin:0; }}
+  h1 {{ font-size:clamp(38px, 5.2vw, 68px); line-height:1.08; margin:0 0 22px; max-width:100%; text-wrap:balance; }}
+  .subtitle {{ max-width:100%; color:var(--olive); font-size:20px; line-height:1.5; margin:0; }}
   .meta-line {{ display:flex; flex-wrap:wrap; gap:10px; color:var(--stone); font-size:14px; margin-top:30px; }}
   .tag {{ background:var(--tag-bg); color:var(--brand); border-radius:4px; padding:4px 8px; }}
-  .portrait-summary {{ max-width:860px; margin-top:30px; padding-left:16px; border-left:3px solid var(--brand); }}
+  .portrait-summary {{ width:100%; max-width:100%; margin-top:30px; padding-left:16px; border-left:3px solid var(--brand); }}
   .portrait-summary span {{ display:block; color:var(--brand); font-size:12px; letter-spacing:.08em; text-transform:uppercase; margin-bottom:8px; }}
   .portrait-summary p {{ margin:0; color:var(--dark-warm); font-family:"TsangerJinKai02","Source Han Serif SC","Noto Serif CJK SC","Songti SC",serif; font-size:24px; line-height:1.58; }}
-  .golden-quote {{ max-width:820px; margin:26px 0 0; padding:0; }}
+  .golden-quote {{ width:100%; max-width:100%; margin:26px 0 0; padding:0; }}
   .golden-quote blockquote {{ margin:0; color:var(--near-black); font-family:"TsangerJinKai02","Source Han Serif SC","Noto Serif CJK SC","Songti SC",serif; font-size:28px; line-height:1.45; }}
   .golden-quote figcaption {{ margin-top:10px; color:var(--stone); font-size:13px; }}
   section {{ padding:42px 0; border-bottom:1px solid var(--border); }}
@@ -1956,7 +1956,7 @@ def build_html(data: dict[str, Any]) -> str:
   @media (max-width: 920px) {{
     .page {{ padding:28px 16px 52px; }}
     h1 {{ max-width:100%; font-size:30px; line-height:1.18; white-space:normal; word-break:break-all; overflow-wrap:anywhere; }}
-    .subtitle {{ max-width:100%; font-size:18px; white-space:normal; word-break:break-all; overflow-wrap:anywhere; }}
+    .subtitle {{ font-size:18px; white-space:normal; word-break:break-all; overflow-wrap:anywhere; }}
     .metrics {{ grid-template-columns:repeat(2, minmax(0, 1fr)); }}
     .chart-grid {{ grid-template-columns:1fr; }}
     .quote-grid {{ grid-template-columns:1fr; }}
@@ -1974,7 +1974,7 @@ def build_html(data: dict[str, Any]) -> str:
 <body>
 <main class="page">
   <header class="cover">
-    <div>
+    <div class="cover-content">
       <div class="eyebrow">{escape_html(report_eyebrow)}</div>
       <h1>{escape_html(report_title)}</h1>
       <p class="subtitle">{escape_html(report_subtitle)}</p>
