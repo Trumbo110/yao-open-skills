@@ -1,0 +1,45 @@
+{
+  "name": "yao-crux-skill",
+  "version": "0.1.0",
+  "owner": "Yao Team",
+  "updated_at": "2026-05-27",
+  "status": "active",
+  "maturity_tier": "production-scaffold",
+  "lifecycle_stage": "initial-production",
+  "context_budget_tier": "production",
+  "review_cadence": "quarterly",
+  "skill_archetype": "production",
+  "category": "decision-analysis",
+  "complexity_tier": "complex",
+  "target_platforms": [
+    "openai",
+    "claude",
+    "generic",
+    "agent-skills-compatible"
+  ],
+  "factory_components": [
+    "references",
+    "scripts",
+    "templates",
+    "input",
+    "evals",
+    "reports"
+  ],
+  "public_release": {
+    "sanitized": true,
+    "includes": [
+      "core skill instructions",
+      "public references",
+      "generation and verification scripts",
+      "canonical templates",
+      "evals",
+      "fictional example report bundles"
+    ],
+    "excludes": [
+      "private real-case reports",
+      "private user inputs",
+      "local source documents",
+      "runtime caches"
+    ]
+  }
+}

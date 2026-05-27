@@ -1,0 +1,204 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Yao Crux Report Input",
+  "type": "object",
+  "required": ["title", "situation", "contradictions", "actions", "projection"],
+  "properties": {
+    "title": {"type": "string"},
+    "slug": {"type": "string"},
+    "case_type": {"type": "string"},
+    "analysis_date": {"type": "string"},
+    "confidence": {"type": "string", "enum": ["low", "medium", "medium-high"]},
+    "situation": {
+      "type": "object",
+      "properties": {
+        "summary": {"type": "string"},
+        "goal": {"type": "string"},
+        "deadline": {"type": "string"},
+        "success_metric": {"type": "string"},
+        "stage": {"type": "string"},
+        "resources": {"type": "array", "items": {"type": "string"}},
+        "constraints": {"type": "array", "items": {"type": "string"}},
+        "stakeholders": {"type": "array", "items": {"type": "string"}},
+        "previous_attempts": {"type": "array", "items": {"type": "string"}},
+        "recurring_patterns": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "facts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["text"],
+        "properties": {
+          "text": {"type": "string"},
+          "source_type": {"type": "string", "enum": ["observed", "estimated", "assumed"]},
+          "note": {"type": "string"}
+        }
+      }
+    },
+    "analysis_logic": {
+      "type": "object",
+      "properties": {
+        "method_note": {"type": "string"},
+        "first_principles_question": {"type": "string"},
+        "higher_level_logic": {"type": "string"},
+        "visible_problems": {"type": "array", "items": {"type": "string"}},
+        "hidden_root_variables": {"type": "array", "items": {"type": "string"}},
+        "why_not_surface": {"type": "string"},
+        "ranking_rule": {"type": "string"}
+      }
+    },
+    "decision_model": {
+      "type": "object",
+      "properties": {
+        "bayesian_note": {"type": "string"},
+        "ockham_note": {"type": "string"},
+        "selected": {"type": "string"},
+        "candidates": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {"type": "string"},
+              "prior": {"type": "number"},
+              "likelihood": {"type": "number"},
+              "causal_leverage": {"type": "number"},
+              "assumption_count": {"type": "number"},
+              "parsimony": {"type": "number"},
+              "posterior": {"type": "number"}
+            }
+          }
+        }
+      }
+    },
+    "visuals": {
+      "type": "object",
+      "properties": {
+        "summary": {"type": "string"},
+        "charts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {"type": "string"},
+              "title": {"type": "string"}
+            }
+          }
+        }
+      }
+    },
+    "resource_allocation": {
+      "type": "object",
+      "properties": {
+        "title": {"type": "string"},
+        "unit": {"type": "string"},
+        "note": {"type": "string"},
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {"type": "string"},
+              "current": {"type": "number"},
+              "recommended": {"type": "number"}
+            }
+          }
+        }
+      }
+    },
+    "stage_transition": {
+      "type": "object",
+      "properties": {
+        "title": {"type": "string"},
+        "note": {"type": "string"},
+        "stages": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "stage": {"type": "string"},
+              "principal": {"type": "string"},
+              "trigger": {"type": "string"}
+            }
+          }
+        }
+      }
+    },
+    "contradictions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "scores"],
+        "properties": {
+          "id": {"type": "string"},
+          "name": {"type": "string"},
+          "type": {"type": "string"},
+          "evidence": {"type": "array", "items": {"type": "string"}},
+          "scores": {
+            "type": "object",
+            "properties": {
+              "goal_impact": {"type": "number", "minimum": 0, "maximum": 5},
+              "causal_leverage": {"type": "number", "minimum": 0, "maximum": 5},
+              "stage_urgency": {"type": "number", "minimum": 0, "maximum": 5},
+              "resource_constraint": {"type": "number", "minimum": 0, "maximum": 5},
+              "changeability": {"type": "number", "minimum": 0, "maximum": 5},
+              "spillover_risk": {"type": "number", "minimum": 0, "maximum": 5},
+              "evidence_strength": {"type": "number", "minimum": 0, "maximum": 5}
+            }
+          },
+          "principal_aspect": {"type": "string"},
+          "why_principal": {"type": "string"},
+          "reversal_condition": {"type": "string"},
+          "defer_reason": {"type": "string"},
+          "monitor_trigger": {"type": "string"}
+        }
+      }
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["action"],
+        "properties": {
+          "action": {"type": "string"},
+          "owner": {"type": "string"},
+          "deadline": {"type": "string"},
+          "resource": {"type": "string"},
+          "metric": {"type": "string"},
+          "completion_probability": {"type": "number", "minimum": 0, "maximum": 1},
+          "estimated_uplift": {"type": "number", "minimum": 0, "maximum": 1},
+          "dependency_discount": {"type": "number", "minimum": 0, "maximum": 1}
+        }
+      }
+    },
+    "projection": {
+      "type": "object",
+      "required": ["baseline_success_probability"],
+      "properties": {
+        "baseline_success_probability": {"type": "number", "minimum": 0, "maximum": 1},
+        "risk_drag": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "risk": {"type": "string"},
+              "probability": {"type": "number", "minimum": 0, "maximum": 1},
+              "impact": {"type": "number", "minimum": 0, "maximum": 1}
+            }
+          }
+        },
+        "sensitivity_notes": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "review": {
+      "type": "object",
+      "properties": {
+        "review_time": {"type": "string"},
+        "review_conditions": {"type": "array", "items": {"type": "string"}},
+        "evidence_to_collect": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "warnings": {"type": "array", "items": {"type": "string"}}
+  }
+}

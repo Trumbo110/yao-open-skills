@@ -1,0 +1,24 @@
+interface:
+  display_name: "Yao Crux Skill"
+  short_description: "通过追问识别主次矛盾、深层根因、图表化报告和行动建议"
+  default_prompt: "Use $yao-crux-skill to diagnose this situation: first ask only the key follow-up questions needed to understand the user's current state, then separate visible symptoms from hidden root variables, use Bayesian/Ockham checks where useful, identify the principal contradiction, secondary contradictions, principal aspect, action plan, probability projection, visual reasoning charts, and export synchronized Markdown, Word, HTML, and PDF reports."
+compatibility:
+  canonical_format: "agent-skills"
+  adapter_targets:
+    - "openai"
+    - "claude"
+    - "generic"
+  activation:
+    mode: "manual"
+    paths: []
+  execution:
+    context: "inline"
+    shell: "bash"
+  trust:
+    source_tier: "local"
+    remote_inline_execution: "forbid"
+    remote_metadata_policy: "allow-metadata-only"
+  degradation:
+    openai: "metadata-adapter"
+    claude: "neutral-source-plus-adapter"
+    generic: "neutral-source"

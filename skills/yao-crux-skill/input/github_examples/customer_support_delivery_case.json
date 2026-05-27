@@ -1,0 +1,212 @@
+{
+  "title": "当前阶段的主要矛盾：客诉响应压力 与 根因闭环能力不足的冲突",
+  "slug": "example-customer-support-delivery",
+  "case_type": "example_customer_support",
+  "analysis_date": "2026-05-26",
+  "confidence": "medium",
+  "situation": {
+    "summary": "一家虚构的企业服务公司上线新版本后，工单量在6周内增长约45%。客服团队虽然努力维持首次响应SLA，但重复问题越来越多，客户成功担心续约风险，产品团队认为需求太杂，客服团队认为产品修复慢。表面看是客服人手不足和产品缺陷，但上升一层看，当前最关键的是客户问题没有形成跨团队根因闭环：问题被快速回复，却没有被稳定归类、定责、修复和验证。",
+    "goal": "45天内降低重复客诉和关键客户续约风险，同时让客服不再靠加班维持表面SLA。",
+    "deadline": "45天",
+    "success_metric": "重复工单占比下降30%；Top 20问题关闭率超过70%；关键客户升级工单减少25%；客服加班时长下降20%。",
+    "stage": "产品更新后的服务修复期",
+    "resources": [
+      "12名客服、5名客户成功、6名产品研发",
+      "最近6周工单、客户群消息和版本发布记录",
+      "已有工单系统和客户健康度标签",
+      "20个关键续约客户清单"
+    ],
+    "constraints": [
+      "关键客户不能继续感受到问题无人负责",
+      "产品研发不能被无限打断",
+      "客服人手短期内无法大幅增加",
+      "SLA不能下降，但只看SLA会掩盖重复问题"
+    ],
+    "stakeholders": [
+      "服务负责人",
+      "客服团队",
+      "客户成功团队",
+      "产品经理",
+      "研发负责人",
+      "关键客户"
+    ],
+    "previous_attempts": [
+      "临时拉群处理重点客户问题，但群里解决后没有进入统一根因表。",
+      "要求客服提高响应速度，但重复工单继续增加。",
+      "产品团队每周修一些问题，但不知道哪些修复最能降低客诉。"
+    ],
+    "recurring_patterns": [
+      "同类问题在不同客户群反复出现。",
+      "客服能安抚客户，但无法推动根因关闭。",
+      "产品修复后缺少验证，客户仍继续提交相似问题。"
+    ]
+  },
+  "facts": [
+    {"text": "新版本上线后6周内工单量增长约45%。", "source_type": "estimated"},
+    {"text": "首次响应SLA基本维持，但重复问题增加。", "source_type": "observed"},
+    {"text": "客户成功担心关键客户续约风险。", "source_type": "observed"},
+    {"text": "跨团队根因分类、定责、修复和验证机制尚未稳定。", "source_type": "assumed"}
+  ],
+  "analysis_logic": {
+    "method_note": "这个案例不能把客服响应速度当成唯一指标。主要矛盾要看哪个问题最能解释工单增长、重复客诉、研发被打断和续约风险同时出现。",
+    "first_principles_question": "如果只能改变一个机制，改变什么能让重复问题减少，而不是只让客服更快回复？",
+    "higher_level_logic": "上升一层看，客服忙、产品慢、客户不满只是表象。根部变量是客户问题没有从工单进入跨团队根因闭环，导致同类问题反复出现。",
+    "visible_problems": [
+      "看得见的问题：工单量上升，客服压力增加。",
+      "看得见的问题：首次响应SLA维持，但客户仍不满意。",
+      "看得见的问题：客户成功担心续约风险。",
+      "看得见的问题：产品、研发和客服互相觉得对方没解决根本问题。"
+    ],
+    "hidden_root_variables": [
+      "看不见的根部变量：客户问题没有稳定进入根因分类、定责、修复和验证闭环。",
+      "看不见的根部变量：团队过度关注响应速度，忽略重复问题减少。",
+      "看不见的根部变量：产品研发缺少按客户影响排序的修复清单。"
+    ],
+    "why_not_surface": "如果只是增加客服或催产品修复，重复问题仍会继续流入。当前要先让Top问题从工单变成有负责人、有修复、有验证的闭环。",
+    "ranking_rule": "优先级按能否降低重复工单、影响续约风险、释放客服时间和减少研发无序打断来排序。"
+  },
+  "visuals": {
+    "summary": "这组图展示为什么客服人手不是唯一解，真正要先处理的是跨团队根因闭环。",
+    "charts": [
+      {"type": "analysis_flow", "title": "分析流程图"},
+      {"type": "iceberg", "title": "冰山模型"},
+      {"type": "decision_matrix", "title": "矛盾候选决策矩阵"},
+      {"type": "resource_allocation", "title": "资源倾斜图"},
+      {"type": "stage_transition", "title": "动态阶段迁移图"}
+    ]
+  },
+  "resource_allocation": {
+    "title": "服务资源倾斜",
+    "unit": "%",
+    "note": "把资源从被动回复和临时拉群，转向Top问题根因闭环、客户影响排序和修复验证。",
+    "items": [
+      {"label": "被动回复", "current": 45, "recommended": 25},
+      {"label": "临时拉群", "current": 25, "recommended": 10},
+      {"label": "根因分类", "current": 10, "recommended": 25},
+      {"label": "产品修复", "current": 15, "recommended": 25},
+      {"label": "修复验证", "current": 5, "recommended": 15}
+    ]
+  },
+  "stage_transition": {
+    "title": "主要矛盾动态转移",
+    "note": "当前先建立根因闭环；一旦重复问题下降，主要矛盾可能转向客户教育、产品稳定性或服务组织规模。",
+    "stages": [
+      {"stage": "当前45天", "principal": "客诉响应压力 与 根因闭环能力不足的冲突", "trigger": "SLA维持但重复问题和续约风险继续上升。"},
+      {"stage": "闭环稳定后", "principal": "产品复杂度 与 客户理解成本的冲突", "trigger": "问题被修复后，客户仍因不会用而频繁咨询。"},
+      {"stage": "产品稳定后", "principal": "服务规模增长 与 客服培训复制不足的冲突", "trigger": "新人客服处理质量明显不稳定。"},
+      {"stage": "大客户阶段", "principal": "标准服务流程 与 关键客户个性化需求的冲突", "trigger": "关键客户要求超出标准支持边界。"}
+    ]
+  },
+  "contradictions": [
+    {
+      "id": "c1",
+      "name": "客诉响应压力 与 根因闭环能力不足的冲突",
+      "type": "process",
+      "evidence": ["工单量增长约45%", "SLA维持但重复问题增加", "产品和客服缺少统一根因闭环"],
+      "scores": {"goal_impact": 5, "causal_leverage": 5, "stage_urgency": 5, "resource_constraint": 4, "changeability": 4, "spillover_risk": 5, "evidence_strength": 4},
+      "principal_aspect": "根因闭环能力不足当前占支配地位",
+      "why_principal": "当前问题不是客服不努力，而是同类问题被不断回复却没有被系统关闭。根因闭环不建立，响应越快也只是把压力往后推。",
+      "reversal_condition": "如果Top问题关闭率超过70%，重复工单仍不下降，主要矛盾可能转向客户教育、产品体验设计或服务分层。"
+    },
+    {
+      "id": "c2",
+      "name": "首次响应SLA 与 客户真实解决感的冲突",
+      "type": "metric",
+      "evidence": ["SLA基本维持", "客户仍不满意", "重复问题继续出现"],
+      "scores": {"goal_impact": 4, "causal_leverage": 4, "stage_urgency": 4, "resource_constraint": 4, "changeability": 4, "spillover_risk": 4, "evidence_strength": 4},
+      "defer_reason": "它需要同步改指标，但要围绕根因闭环来改，不能只替换SLA口径。",
+      "monitor_trigger": "如果根因闭环上线后客户满意度仍不改善，再升级指标体系。"
+    },
+    {
+      "id": "c3",
+      "name": "产品修复需求 与 研发注意力分散的冲突",
+      "type": "resource",
+      "evidence": ["产品研发被多个客户问题打断", "缺少按客户影响排序的修复清单"],
+      "scores": {"goal_impact": 4, "causal_leverage": 4, "stage_urgency": 4, "resource_constraint": 5, "changeability": 3, "spillover_risk": 4, "evidence_strength": 3},
+      "defer_reason": "它是根因闭环的关键依赖，但要先通过Top问题排序降低无序打断。",
+      "monitor_trigger": "如果Top问题清单形成后研发仍无法承诺修复窗口，就升级研发资源矛盾。"
+    },
+    {
+      "id": "c4",
+      "name": "关键客户个性化诉求 与 标准服务边界的冲突",
+      "type": "customer",
+      "evidence": ["关键客户升级工单增加", "客户成功担心续约风险"],
+      "scores": {"goal_impact": 4, "causal_leverage": 3, "stage_urgency": 4, "resource_constraint": 4, "changeability": 3, "spillover_risk": 5, "evidence_strength": 3},
+      "defer_reason": "当前先区分通用根因和个性化诉求，避免所有问题都被当成大客户特例处理。",
+      "monitor_trigger": "如果通用问题下降后关键客户仍频繁升级，再处理服务边界。"
+    },
+    {
+      "id": "c5",
+      "name": "客服人手有限 与 工单增长的冲突",
+      "type": "resource",
+      "evidence": ["工单量增长", "客服加班增加"],
+      "scores": {"goal_impact": 3, "causal_leverage": 3, "stage_urgency": 4, "resource_constraint": 4, "changeability": 3, "spillover_risk": 3, "evidence_strength": 3},
+      "defer_reason": "加人可能有用，但如果重复问题不下降，新增人手会继续被同类问题吞掉。",
+      "monitor_trigger": "如果重复工单下降后仍超出客服承载，再重新评估编制。"
+    }
+  ],
+  "actions": [
+    {
+      "action": "3天内从最近6周工单中整理Top 20重复问题，并按客户影响和出现频率排序。",
+      "owner": "服务负责人 + 客服组长",
+      "deadline": "3天",
+      "resource": "工单导出、客户健康度、续约客户清单",
+      "metric": "形成Top 20问题表，每个问题有客户影响、频次和初步归类。",
+      "completion_probability": 0.86,
+      "estimated_uplift": 0.08,
+      "dependency_discount": 0.9
+    },
+    {
+      "action": "7天内建立每日30分钟根因闭环会，只处理Top问题的定责、修复、话术和验证。",
+      "owner": "服务负责人 + 产品经理",
+      "deadline": "7天",
+      "resource": "产品/研发代表、客服组长、客户成功代表",
+      "metric": "Top 20问题全部有负责人、下一步动作和预计关闭时间。",
+      "completion_probability": 0.74,
+      "estimated_uplift": 0.15,
+      "dependency_discount": 0.85
+    },
+    {
+      "action": "30天内关闭至少70%的Top问题，并用客户回访确认是否真的减少重复咨询。",
+      "owner": "产品经理 + 客服组长",
+      "deadline": "30天",
+      "resource": "研发修复窗口、客服话术、回访样本",
+      "metric": "Top问题关闭率超过70%，重复工单占比下降30%。",
+      "completion_probability": 0.66,
+      "estimated_uplift": 0.2,
+      "dependency_discount": 0.8
+    }
+  ],
+  "projection": {
+    "baseline_success_probability": 0.3,
+    "risk_drag": [
+      {"risk": "产品研发无法为Top问题预留修复窗口", "probability": 0.3, "impact": 0.09},
+      {"risk": "客服只做话术更新，没有验证客户是否真正少报问题", "probability": 0.25, "impact": 0.07}
+    ],
+    "sensitivity_notes": [
+      "如果Top 20问题无法覆盖50%以上重复工单，说明分类口径需要重做。",
+      "如果关闭率高但重复工单不降，要检查修复验证是否真实。",
+      "如果关键客户升级减少明显，可以上调续约风险缓解概率。"
+    ]
+  },
+  "review": {
+    "review_time": "7天看Top问题闭环，30天看重复工单，45天看关键客户风险。",
+    "review_conditions": [
+      "Top 20问题关闭率超过70%。",
+      "重复工单占比下降30%。",
+      "关键客户升级工单减少25%。",
+      "客服加班时长没有下降。"
+    ],
+    "evidence_to_collect": [
+      "Top问题清单",
+      "重复工单占比",
+      "首次响应和真正解决时间",
+      "客户回访结果",
+      "关键客户健康度变化"
+    ]
+  },
+  "warnings": [
+    "本报告为虚构业务示例，仅用于展示skill输出效果。",
+    "概率为结构化估算，不代表真实经营承诺。"
+  ]
+}

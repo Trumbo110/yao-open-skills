@@ -1,0 +1,42 @@
+{
+  "skill_name": "yao-crux-skill",
+  "must_route_signals": [
+    "主要矛盾",
+    "次要矛盾",
+    "主次矛盾",
+    "矛盾论分析",
+    "优先级混乱",
+    "冲突很多",
+    "资源有限",
+    "找关键问题",
+    "行动后的概率推演"
+  ],
+  "must_not_route_signals": [
+    "只总结矛盾论",
+    "原文解读",
+    "历史背景",
+    "普通排版",
+    "最终医疗诊断",
+    "最终法律意见",
+    "直接投资建议"
+  ],
+  "required_output_concepts": [
+    "follow_up_questions",
+    "visible_problems",
+    "hidden_root_variables",
+    "first_principles_reasoning",
+    "bayesian_update",
+    "ockham_razor",
+    "visual_charts",
+    "resource_allocation",
+    "stage_transition",
+    "candidate_contradictions",
+    "principal_contradiction",
+    "principal_aspect",
+    "secondary_contradictions",
+    "action_plan",
+    "probability_projection",
+    "review_conditions",
+    "markdown_html_docx_pdf_bundle"
+  ]
+}

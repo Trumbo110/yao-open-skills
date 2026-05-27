@@ -1,0 +1,56 @@
+{
+  "positive": [
+    {
+      "input": "我现在创业团队资源很少，产品、销售、融资都卡住了，帮我找当前主要矛盾和行动重点。",
+      "expected": "route"
+    },
+    {
+      "input": "用矛盾论分析一下我现在职业转型的主要矛盾、次要矛盾和接下来30天应该怎么做。",
+      "expected": "route"
+    },
+    {
+      "input": "我们团队优先级混乱，会议很多但项目延期，想要一份主次矛盾诊断报告和PDF。",
+      "expected": "route"
+    },
+    {
+      "input": "我想先被追问，再诊断我现在的核心问题，并推演不同动作的成功概率。",
+      "expected": "route"
+    }
+  ],
+  "negative": [
+    {
+      "input": "帮我总结《矛盾论》的历史背景和思想来源。",
+      "expected": "do_not_route",
+      "reason": "philosophy-only summary"
+    },
+    {
+      "input": "矛盾论的原文有哪些经典段落？",
+      "expected": "do_not_route",
+      "reason": "text commentary without live case"
+    },
+    {
+      "input": "给我做一个普通项目周报，不需要分析主次矛盾。",
+      "expected": "do_not_route",
+      "reason": "generic report"
+    },
+    {
+      "input": "我应该买哪只股票？直接给投资建议。",
+      "expected": "do_not_route",
+      "reason": "final investment advice"
+    }
+  ],
+  "adjacent": [
+    {
+      "input": "帮我用贝叶斯方法更新这个决策概率。",
+      "expected": "prefer yao-bayesian-skill"
+    },
+    {
+      "input": "帮我用奥卡姆剃刀删掉方案里的复杂度。",
+      "expected": "prefer yao-occam-skill"
+    },
+    {
+      "input": "只把这篇文章排版成PDF。",
+      "expected": "prefer kami"
+    }
+  ]
+}

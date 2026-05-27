@@ -1,6 +1,6 @@
 {
   "repo_name": "yao-open-skills",
-  "updated_at": "2026-05-26",
+  "updated_at": "2026-05-27",
   "skills": [
     {
       "slug": "learning-builder",
@@ -91,6 +91,31 @@
       ],
       "last_synced_at": "2026-05-26",
       "updated_at": "2026-05-26"
+    },
+    {
+      "slug": "yao-crux-skill",
+      "title": "Yao Crux Skill",
+      "summary": "Diagnose complex situations by clarifying the current state, separating principal and secondary contradictions, identifying hidden root variables, recommending focused actions, projecting outcome probabilities, and exporting Markdown/HTML/DOCX/PDF reports.",
+      "source_local_path": "/Users/laoyao/AI Coding/03-Development/Skills/yao-crux-skill",
+      "collection_path": "skills/yao-crux-skill",
+      "lifecycle": "active",
+      "sync_status": "published",
+      "github_repo": "yao-open-skills",
+      "github_url": "https://github.com/yaojingang/yao-open-skills/tree/main/skills/yao-crux-skill",
+      "guide_path": "docs/skills/yao-crux-skill.md",
+      "license": "MIT",
+      "tags": [
+        "decision-analysis",
+        "principal-contradiction",
+        "diagnosis",
+        "first-principles",
+        "reporting",
+        "docx",
+        "pdf",
+        "html"
+      ],
+      "last_synced_at": "2026-05-27",
+      "updated_at": "2026-05-27"
     },
     {
       "slug": "yao-gametheory-skill",

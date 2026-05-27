@@ -1,0 +1,118 @@
+{
+  "title": "当前阶段的主要矛盾：力量A 与 力量B 的冲突",
+  "slug": "crux-report",
+  "case_type": "startup/team/product/life/relationship/learning/health/decision",
+  "analysis_date": "2026-05-25",
+  "confidence": "medium",
+  "situation": {
+    "summary": "用3到5句话复述当前目标、现状、阶段、约束和资源。",
+    "goal": "希望达到的目标。",
+    "deadline": "期限。",
+    "success_metric": "成功标准。",
+    "stage": "当前阶段。",
+    "resources": ["可投入资源1", "可投入资源2"],
+    "constraints": ["不可突破边界1", "不可突破边界2"],
+    "stakeholders": ["利益相关方1", "利益相关方2"],
+    "previous_attempts": ["已经尝试过的方案及结果。"],
+    "recurring_patterns": ["类似问题出现的频率、节点或触发条件。"]
+  },
+  "facts": [
+    {"text": "已发生的事实或可验证观察。", "source_type": "observed"},
+    {"text": "估算值或经验判断。", "source_type": "estimated"},
+    {"text": "暂时假设，需要验证。", "source_type": "assumed"}
+  ],
+  "analysis_logic": {
+    "method_note": "用主次矛盾方法说明：不是按声音最大的问题排序，而是找当前阶段最决定整体走向的根部关系。",
+    "first_principles_question": "如果只能改变一个根部变量，改变什么能让多个看得见的问题一起变轻？",
+    "higher_level_logic": "上升一层看，表面问题背后可能有更深的资源、能力、人才、信任、现金、注意力或决策权约束。",
+    "visible_problems": ["看得见的问题1", "看得见的问题2"],
+    "hidden_root_variables": ["看不见的根部变量1", "看不见的根部变量2"],
+    "why_not_surface": "为什么不是先处理最明显的问题。",
+    "ranking_rule": "如何从候选矛盾中选出主要矛盾。"
+  },
+  "decision_model": {
+    "bayesian_note": "贝叶斯更新：用新增事实修正每个候选矛盾是真主因的可信度。",
+    "ockham_note": "奥卡姆剃刀：解释力接近时，优先选择能解释更多问题且假设更少的候选。",
+    "selected": "最终选择的主要矛盾。"
+  },
+  "visuals": {
+    "summary": "用图表展示从表象到主要矛盾的分析路径。",
+    "charts": [
+      {"type": "analysis_flow", "title": "分析流程图"},
+      {"type": "iceberg", "title": "冰山模型"},
+      {"type": "decision_matrix", "title": "矛盾候选决策矩阵"},
+      {"type": "resource_allocation", "title": "时间/精力/资源倾斜图"},
+      {"type": "stage_transition", "title": "动态阶段迁移图"}
+    ]
+  },
+  "resource_allocation": {
+    "title": "时间、精力、资源倾斜",
+    "unit": "%",
+    "note": "当前资源和建议资源的对比。",
+    "items": [
+      {"label": "救火/临时响应", "current": 40, "recommended": 20},
+      {"label": "沟通协调", "current": 25, "recommended": 15},
+      {"label": "根部变量动作", "current": 10, "recommended": 40}
+    ]
+  },
+  "stage_transition": {
+    "title": "主要矛盾动态转移",
+    "note": "当前主矛盾缓解后，重新判断下一阶段主矛盾。",
+    "stages": [
+      {"stage": "当前阶段", "principal": "当前主要矛盾", "trigger": "当前目标窗口内最决定结果。"},
+      {"stage": "下一阶段候选", "principal": "可能上升的新主要矛盾", "trigger": "复盘指标触发。"}
+    ]
+  },
+  "contradictions": [
+    {
+      "id": "c1",
+      "name": "力量A 与 力量B 的冲突",
+      "type": "resource",
+      "evidence": ["支持这个候选矛盾的事实或观察。"],
+      "scores": {
+        "goal_impact": 0,
+        "causal_leverage": 0,
+        "stage_urgency": 0,
+        "resource_constraint": 0,
+        "changeability": 0,
+        "spillover_risk": 0,
+        "evidence_strength": 0
+      },
+      "principal_aspect": "当前占支配地位的一方。",
+      "why_principal": "为什么它最决定当前阶段结果。",
+      "reversal_condition": "什么信号出现时需要重新判断。",
+      "defer_reason": "如果它是次要矛盾，为什么暂缓。",
+      "monitor_trigger": "如果暂缓，什么阈值触发处理。"
+    }
+  ],
+  "actions": [
+    {
+      "action": "突破动作。",
+      "owner": "负责人。",
+      "deadline": "期限。",
+      "resource": "需要投入的资源。",
+      "metric": "验收指标。",
+      "completion_probability": 0.7,
+      "estimated_uplift": 0.1,
+      "dependency_discount": 0.85
+    }
+  ],
+  "projection": {
+    "baseline_success_probability": 0.25,
+    "risk_drag": [
+      {"risk": "主要风险", "probability": 0.3, "impact": 0.08}
+    ],
+    "sensitivity_notes": [
+      "最影响结论的假设。",
+      "什么证据会提高或降低行动后概率。"
+    ]
+  },
+  "review": {
+    "review_time": "7到30天后复盘。",
+    "review_conditions": ["触发重新判断的条件。"],
+    "evidence_to_collect": ["下一轮必须补的证据。"]
+  },
+  "warnings": [
+    "本报告只用于结构化诊断和行动辅助，不替代专业意见。"
+  ]
+}

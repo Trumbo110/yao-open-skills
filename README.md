@@ -105,6 +105,7 @@ yao-open-skills/
 - [Yao Bayesian Skill](docs/skills/yao-bayesian-skill.md)
 - [Yao Business Skill](docs/skills/yao-business-skill.md)
 - [Yao Copyright Skill](docs/skills/yao-copyright-skill.md)
+- [Yao Crux Skill](docs/skills/yao-crux-skill.md)
 - [Yao Game Theory Skill](docs/skills/yao-gametheory-skill.md)
 - [Yao Kelly Skill](docs/skills/yao-kelly-skill.md)
 - [Yao Tutorial Skill](docs/skills/yao-tutorial-skill.md)
@@ -112,6 +113,32 @@ yao-open-skills/
 - [Yao Websecurity Skill](docs/skills/yao-websecurity-skill.md)
 
 ## Featured Published Skills
+
+### Yao Crux Skill
+
+[`yao-crux-skill`](docs/skills/yao-crux-skill.md) 是一个面向复杂现实问题的主次矛盾诊断 Skill。
+
+它会先判断用户当前现状是否足够清楚，再把看得见的问题、看不见的根部变量、主要矛盾、次要矛盾、主要方面、行动建议和结果概率组织成一份可复盘的诊断报告。
+
+它的公开版本现在有这些比较突出的特点：
+
+- 先做现状清晰度判断，信息不足时优先追问，不急着输出结论
+- 用主次矛盾、第一性原理、贝叶斯式证据更新和奥卡姆剃刀辅助判断真正的上游卡点
+- 明确区分 `主要矛盾（最关键的卡点）` 和 `次要矛盾（先不主攻，但要盯住）`
+- 每个结论都带反转条件、复盘时间和下一阶段主要矛盾可能转移的信号
+- 报告包含分析流程图、照片式冰山模型、矛盾候选矩阵、资源倾斜图和动态阶段迁移图
+- 默认生成 `Markdown + HTML + DOCX + PDF + report JSON`
+- 公开仓库只包含三个虚构业务示例，真实案例和私有输入不进入仓库
+
+如果你想快速理解这个 Skill，建议按这个顺序看：
+
+1. [公开说明文档](docs/skills/yao-crux-skill.md)
+2. [目录说明](skills/yao-crux-skill/README.md)
+3. [Skill 入口](skills/yao-crux-skill/SKILL.md)
+4. [追问与现状清晰度](skills/yao-crux-skill/references/intake-and-questioning.md)
+5. [主次矛盾判断模型](skills/yao-crux-skill/references/contradiction-model.md)
+6. [报告导出流程](skills/yao-crux-skill/references/report-export-pipeline.md)
+7. [虚构示例报告](skills/yao-crux-skill/reports/github-examples/README.md)
 
 ### Yao WeRead Skill
 
@@ -291,6 +318,7 @@ yao-open-skills/
 | [yao-bayesian-skill](skills/yao-bayesian-skill/SKILL.md) | [guide](docs/skills/yao-bayesian-skill.md) | `active` | `published` | [skills/yao-bayesian-skill](skills/yao-bayesian-skill) | `external-local-source` | [link](https://github.com/yaojingang/yao-open-skills/tree/main/skills/yao-bayesian-skill) |
 | [yao-business-skill](skills/yao-business-skill/SKILL.md) | [guide](docs/skills/yao-business-skill.md) | `active` | `published` | [skills/yao-business-skill](skills/yao-business-skill) | `external-local-source` | [link](https://github.com/yaojingang/yao-open-skills/tree/main/skills/yao-business-skill) |
 | [yao-copyright-skill](skills/yao-copyright-skill/SKILL.md) | [guide](docs/skills/yao-copyright-skill.md) | `active` | `published` | [skills/yao-copyright-skill](skills/yao-copyright-skill) | `external-local-source` | [link](https://github.com/yaojingang/yao-open-skills/tree/main/skills/yao-copyright-skill) |
+| [yao-crux-skill](skills/yao-crux-skill/SKILL.md) | [guide](docs/skills/yao-crux-skill.md) | `active` | `published` | [skills/yao-crux-skill](skills/yao-crux-skill) | `external-local-source` | [link](https://github.com/yaojingang/yao-open-skills/tree/main/skills/yao-crux-skill) |
 | [yao-gametheory-skill](skills/yao-gametheory-skill/SKILL.md) | [guide](docs/skills/yao-gametheory-skill.md) | `active` | `published` | [skills/yao-gametheory-skill](skills/yao-gametheory-skill) | `external-local-source` | [link](https://github.com/yaojingang/yao-open-skills/tree/main/skills/yao-gametheory-skill) |
 | [yao-kelly-skill](skills/yao-kelly-skill/SKILL.md) | [guide](docs/skills/yao-kelly-skill.md) | `active` | `published` | [skills/yao-kelly-skill](skills/yao-kelly-skill) | `external-local-source` | [link](https://github.com/yaojingang/yao-open-skills/tree/main/skills/yao-kelly-skill) |
 | [yao-open-skills-sync](skills/yao-open-skills-sync/SKILL.md) | [guide](docs/skills/yao-open-skills-sync.md) | `active` | `published` | [skills/yao-open-skills-sync](skills/yao-open-skills-sync) | [skills/yao-open-skills-sync](skills/yao-open-skills-sync) | [link](https://github.com/yaojingang/yao-open-skills/tree/main/skills/yao-open-skills-sync) |

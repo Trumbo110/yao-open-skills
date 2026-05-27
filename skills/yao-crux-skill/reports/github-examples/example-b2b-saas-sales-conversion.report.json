@@ -1,0 +1,586 @@
+{
+  "title": "现在最该先解决的是：线索数量增长 与 高意向客户识别能力不足的冲突",
+  "source_title": "当前阶段的主要矛盾：线索数量增长 与 高意向客户识别能力不足的冲突",
+  "slug": "example-b2b-saas-sales-conversion",
+  "case_type": "example_b2b_saas_sales",
+  "analysis_date": "2026-05-26",
+  "confidence": "medium",
+  "situation": {
+    "summary": "一家虚构的B2B SaaS公司正在加大内容投放、活动获客和销售外呼，月度线索数从600条涨到约1200条，但演示预约率只有18%，成交率约4%。市场团队认为销售跟进不及时，销售团队认为线索质量差，管理层又要求90天内把新增MRR提升50%。表面看是线索质量和销售执行互相扯皮，往上看一层，当前更深的问题是团队还没有建立可执行的高意向客户识别、分层跟进和反馈闭环。",
+    "goal": "90天内让新增MRR提升50%，同时把销售团队的无效跟进时间降下来。",
+    "deadline": "90天",
+    "success_metric": "高意向线索占比提升到35%以上；演示预约率达到28%；成交率达到7%；销售无效跟进时间下降30%。",
+    "stage": "从获客扩张进入转化验证期",
+    "resources": [
+      "8名销售、3名市场、1名销售运营",
+      "每月约1200条新线索",
+      "已有CRM、活动报名表和官网表单数据",
+      "过去6个月的成交与流失记录"
+    ],
+    "constraints": [
+      "90天内必须看到新增MRR改善",
+      "市场预算不能继续大幅增加",
+      "销售已经被低质量线索占满，不能靠继续加班解决",
+      "产品定价和功能暂时不能大改"
+    ],
+    "stakeholders": [
+      "CEO",
+      "销售负责人",
+      "市场负责人",
+      "销售运营",
+      "一线销售",
+      "潜在客户"
+    ],
+    "previous_attempts": [
+      "加大内容和活动投放，线索量上来了，但成交没有同步改善。",
+      "要求销售更快跟进，但销售反馈大量线索没有预算、没有明确需求或不是决策人。",
+      "市场优化过表单字段，但没有形成销售认可的评分和反馈机制。"
+    ],
+    "recurring_patterns": [
+      "每周复盘都在争论线索质量还是跟进速度。",
+      "销售把大量时间花在低意向客户上，高意向客户反而没有被优先处理。",
+      "市场只看线索数和成本，销售只看成交，双方缺少同一张漏斗账。"
+    ]
+  },
+  "facts": [
+    {
+      "text": "月度线索数从约600条涨到约1200条。",
+      "source_type": "estimated",
+      "note": ""
+    },
+    {
+      "text": "演示预约率约18%，成交率约4%。",
+      "source_type": "estimated",
+      "note": ""
+    },
+    {
+      "text": "销售团队认为线索质量差，市场团队认为销售跟进不及时。",
+      "source_type": "observed",
+      "note": ""
+    },
+    {
+      "text": "高意向客户画像、线索评分和反馈闭环尚未统一。",
+      "source_type": "assumed",
+      "note": ""
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c1",
+      "name": "线索数量增长 与 高意向客户识别能力不足的冲突",
+      "type": "market",
+      "evidence": [
+        "线索数量翻倍但成交率仍低",
+        "销售被低意向客户占满",
+        "市场和销售没有统一评分标准"
+      ],
+      "scores": {
+        "goal_impact": 5,
+        "causal_leverage": 5,
+        "stage_urgency": 5,
+        "resource_constraint": 5,
+        "changeability": 4,
+        "spillover_risk": 4,
+        "evidence_strength": 4
+      },
+      "principal_aspect": "高意向客户识别能力不足当前占支配地位",
+      "why_principal": "当前不是没有线索，而是不知道哪些线索值得优先投入销售时间。只要识别和分层不清楚，继续买量会放大浪费，继续催销售会加重无效劳动。",
+      "reversal_condition": "如果高意向线索占比和演示预约率明显提升，但成交率仍低，主要矛盾可能转向产品包装、定价或销售方案能力。",
+      "weighted_total": 4.750000000000001
+    },
+    {
+      "id": "c3",
+      "name": "销售跟进压力 与 分层优先级缺失的冲突",
+      "type": "resource",
+      "evidence": [
+        "销售处理大量低意向线索",
+        "高意向客户没有被优先跟进"
+      ],
+      "scores": {
+        "goal_impact": 4,
+        "causal_leverage": 4,
+        "stage_urgency": 5,
+        "resource_constraint": 5,
+        "changeability": 4,
+        "spillover_risk": 4,
+        "evidence_strength": 3
+      },
+      "defer_reason": "它是主要矛盾的直接表现，先通过线索分层来降低销售无效跟进。",
+      "monitor_trigger": "如果分层上线后高意向客户仍未被24小时内跟进，需要单独处理销售执行纪律。",
+      "weighted_total": 4.25
+    },
+    {
+      "id": "c2",
+      "name": "市场获客指标 与 收入转化指标割裂的冲突",
+      "type": "goal",
+      "evidence": [
+        "市场主要看线索数和成本",
+        "销售主要看成交",
+        "双方缺少同一张漏斗账"
+      ],
+      "scores": {
+        "goal_impact": 4,
+        "causal_leverage": 4,
+        "stage_urgency": 4,
+        "resource_constraint": 4,
+        "changeability": 4,
+        "spillover_risk": 4,
+        "evidence_strength": 4
+      },
+      "defer_reason": "它需要同步处理，但要围绕高意向客户定义来重建指标，否则只是换一组报表。",
+      "monitor_trigger": "如果两周后市场和销售仍无法使用同一张漏斗报表复盘，就升级为主要矛盾候选。",
+      "weighted_total": 4.0
+    },
+    {
+      "id": "c4",
+      "name": "快速增长目标 与 产品包装不清晰的冲突",
+      "type": "value",
+      "evidence": [
+        "成交率低可能和方案表达有关",
+        "客户需求和产品价值尚未完全对应"
+      ],
+      "scores": {
+        "goal_impact": 4,
+        "causal_leverage": 3,
+        "stage_urgency": 3,
+        "resource_constraint": 3,
+        "changeability": 3,
+        "spillover_risk": 3,
+        "evidence_strength": 2
+      },
+      "defer_reason": "目前证据更多指向线索识别问题，产品包装要在高意向样本里继续验证。",
+      "monitor_trigger": "如果高意向客户仍大量卡在报价和方案理解上，再升级处理。",
+      "weighted_total": 3.1999999999999997
+    },
+    {
+      "id": "c5",
+      "name": "渠道数据分散 与 漏斗归因不清的冲突",
+      "type": "data",
+      "evidence": [
+        "官网表单、活动报名和外呼线索字段不一致",
+        "无法稳定判断哪个来源真正带来成交"
+      ],
+      "scores": {
+        "goal_impact": 3,
+        "causal_leverage": 3,
+        "stage_urgency": 3,
+        "resource_constraint": 3,
+        "changeability": 4,
+        "spillover_risk": 3,
+        "evidence_strength": 3
+      },
+      "defer_reason": "数据治理重要，但先服务于高意向识别，不宜先做大而全的数据项目。",
+      "monitor_trigger": "如果关键字段缺失导致评分无法上线，再把数据治理升级为主线。",
+      "weighted_total": 3.1
+    }
+  ],
+  "principal": {
+    "id": "c1",
+    "name": "线索数量增长 与 高意向客户识别能力不足的冲突",
+    "type": "market",
+    "evidence": [
+      "线索数量翻倍但成交率仍低",
+      "销售被低意向客户占满",
+      "市场和销售没有统一评分标准"
+    ],
+    "scores": {
+      "goal_impact": 5,
+      "causal_leverage": 5,
+      "stage_urgency": 5,
+      "resource_constraint": 5,
+      "changeability": 4,
+      "spillover_risk": 4,
+      "evidence_strength": 4
+    },
+    "principal_aspect": "高意向客户识别能力不足当前占支配地位",
+    "why_principal": "当前不是没有线索，而是不知道哪些线索值得优先投入销售时间。只要识别和分层不清楚，继续买量会放大浪费，继续催销售会加重无效劳动。",
+    "reversal_condition": "如果高意向线索占比和演示预约率明显提升，但成交率仍低，主要矛盾可能转向产品包装、定价或销售方案能力。",
+    "weighted_total": 4.750000000000001
+  },
+  "secondary": [
+    {
+      "id": "c3",
+      "name": "销售跟进压力 与 分层优先级缺失的冲突",
+      "type": "resource",
+      "evidence": [
+        "销售处理大量低意向线索",
+        "高意向客户没有被优先跟进"
+      ],
+      "scores": {
+        "goal_impact": 4,
+        "causal_leverage": 4,
+        "stage_urgency": 5,
+        "resource_constraint": 5,
+        "changeability": 4,
+        "spillover_risk": 4,
+        "evidence_strength": 3
+      },
+      "defer_reason": "它是主要矛盾的直接表现，先通过线索分层来降低销售无效跟进。",
+      "monitor_trigger": "如果分层上线后高意向客户仍未被24小时内跟进，需要单独处理销售执行纪律。",
+      "weighted_total": 4.25
+    },
+    {
+      "id": "c2",
+      "name": "市场获客指标 与 收入转化指标割裂的冲突",
+      "type": "goal",
+      "evidence": [
+        "市场主要看线索数和成本",
+        "销售主要看成交",
+        "双方缺少同一张漏斗账"
+      ],
+      "scores": {
+        "goal_impact": 4,
+        "causal_leverage": 4,
+        "stage_urgency": 4,
+        "resource_constraint": 4,
+        "changeability": 4,
+        "spillover_risk": 4,
+        "evidence_strength": 4
+      },
+      "defer_reason": "它需要同步处理，但要围绕高意向客户定义来重建指标，否则只是换一组报表。",
+      "monitor_trigger": "如果两周后市场和销售仍无法使用同一张漏斗报表复盘，就升级为主要矛盾候选。",
+      "weighted_total": 4.0
+    },
+    {
+      "id": "c4",
+      "name": "快速增长目标 与 产品包装不清晰的冲突",
+      "type": "value",
+      "evidence": [
+        "成交率低可能和方案表达有关",
+        "客户需求和产品价值尚未完全对应"
+      ],
+      "scores": {
+        "goal_impact": 4,
+        "causal_leverage": 3,
+        "stage_urgency": 3,
+        "resource_constraint": 3,
+        "changeability": 3,
+        "spillover_risk": 3,
+        "evidence_strength": 2
+      },
+      "defer_reason": "目前证据更多指向线索识别问题，产品包装要在高意向样本里继续验证。",
+      "monitor_trigger": "如果高意向客户仍大量卡在报价和方案理解上，再升级处理。",
+      "weighted_total": 3.1999999999999997
+    },
+    {
+      "id": "c5",
+      "name": "渠道数据分散 与 漏斗归因不清的冲突",
+      "type": "data",
+      "evidence": [
+        "官网表单、活动报名和外呼线索字段不一致",
+        "无法稳定判断哪个来源真正带来成交"
+      ],
+      "scores": {
+        "goal_impact": 3,
+        "causal_leverage": 3,
+        "stage_urgency": 3,
+        "resource_constraint": 3,
+        "changeability": 4,
+        "spillover_risk": 3,
+        "evidence_strength": 3
+      },
+      "defer_reason": "数据治理重要，但先服务于高意向识别，不宜先做大而全的数据项目。",
+      "monitor_trigger": "如果关键字段缺失导致评分无法上线，再把数据治理升级为主线。",
+      "weighted_total": 3.1
+    }
+  ],
+  "actions": [
+    {
+      "action": "7天内定义高意向客户画像和淘汰标准，暂停只看线索数量的复盘。",
+      "owner": "销售负责人 + 市场负责人",
+      "deadline": "7天",
+      "resource": "最近50个成交/未成交样本、CRM字段、2小时共创会",
+      "metric": "形成ICP、反ICP、预算/权限/需求/时机四类评分字段。",
+      "completion_probability": 0.82,
+      "estimated_uplift": 0.08,
+      "dependency_discount": 0.9,
+      "expected_uplift": 0.059039999999999995
+    },
+    {
+      "action": "14天内上线线索分层和24小时高意向跟进规则。",
+      "owner": "销售运营",
+      "deadline": "14天",
+      "resource": "CRM配置、销售SOP、市场表单字段",
+      "metric": "A类线索24小时跟进率超过90%，C类线索自动培育或暂缓跟进。",
+      "completion_probability": 0.7,
+      "estimated_uplift": 0.14,
+      "dependency_discount": 0.85,
+      "expected_uplift": 0.0833
+    },
+    {
+      "action": "30天内用同一张漏斗账复盘三类渠道：内容、活动、外呼。",
+      "owner": "CEO + 销售运营",
+      "deadline": "30天",
+      "resource": "渠道标签、销售反馈、成交和流失原因",
+      "metric": "每个渠道都有高意向占比、演示率、成交率和下一步预算建议。",
+      "completion_probability": 0.68,
+      "estimated_uplift": 0.16,
+      "dependency_discount": 0.8,
+      "expected_uplift": 0.08704
+    }
+  ],
+  "risks": [
+    {
+      "risk": "销售仍按个人习惯跟进，不执行分层规则",
+      "probability": 0.3,
+      "impact": 0.08,
+      "expected_drag": 0.024
+    },
+    {
+      "risk": "市场继续追求线索量，忽略高意向占比",
+      "probability": 0.28,
+      "impact": 0.07,
+      "expected_drag": 0.019600000000000003
+    }
+  ],
+  "projection": {
+    "baseline": 0.24,
+    "expected_action_uplift": 0.22938,
+    "expected_risk_drag": 0.0436,
+    "recommended_probability": 0.42578000000000005,
+    "scenarios": [
+      {
+        "name": "维持现状",
+        "probability": 0.2182,
+        "reading": "不集中处理关键卡点，只做零散优化，结果大概率继续被原来的卡点限制。"
+      },
+      {
+        "name": "按建议执行",
+        "probability": 0.42578000000000005,
+        "reading": "完成关键动作并获得反馈后，目标达成概率的中性估计。"
+      },
+      {
+        "name": "高质量执行",
+        "probability": 0.5806899999999999,
+        "reading": "动作完成质量高、依赖少、风险被压住时的上行情景。"
+      },
+      {
+        "name": "执行不足或受阻",
+        "probability": 0.272323,
+        "reading": "动作完成不充分、并行干扰持续或风险变大时的下行情景。"
+      }
+    ],
+    "sensitivity_notes": [
+      "如果A类线索24小时跟进率低于80%，建议下调行动后概率。",
+      "如果高意向占比达到35%但成交率仍低，主要矛盾可能转向产品包装或销售方案。",
+      "如果线索字段缺失严重，先补最小字段，不做全量数据治理。"
+    ]
+  },
+  "analysis_logic": {
+    "method_note": "这个案例不能只看线索数量、跟进速度或成交率某一个指标，而要看哪个矛盾最能解释获客变多但收入没有同步增长。",
+    "first_principles_question": "如果只能改变一个变量，改变什么能让同样的线索预算产生更高的有效商机和成交？",
+    "higher_level_logic": "销售和市场的冲突不是根部问题，根部变量是团队没有把高意向客户的识别标准、优先级和反馈机制变成共同工作方式。",
+    "visible_problems": [
+      "看得见的问题：线索数增长，但演示预约率和成交率没有同步提升。",
+      "看得见的问题：销售和市场互相指责，复盘无法落到动作。",
+      "看得见的问题：销售被大量低意向客户占满。",
+      "看得见的问题：市场仍主要围绕线索数量和成本做优化。"
+    ],
+    "hidden_root_variables": [
+      "看不见的根部变量：高意向客户识别标准不统一，线索没有被有效分层。",
+      "看不见的根部变量：市场、销售和销售运营没有共同负责同一张漏斗账。",
+      "看不见的根部变量：CRM字段、表单问题和销售反馈没有形成可迭代的评分模型。"
+    ],
+    "why_not_surface": "如果只要求销售更快跟进，低意向线索会继续占用时间；如果只要求市场继续买量，预算会继续放大低质量漏斗。真正要先解决的是高意向识别和分层跟进。",
+    "ranking_rule": "优先级按能否直接影响MRR、能否释放销售时间、能否让市场和销售形成同一套反馈来排序。",
+    "candidate_count": 5
+  },
+  "decision_model": {
+    "bayesian_note": "贝叶斯更新：先把每个候选矛盾当作一个解释假设，再用目标影响、因果牵引、资源约束和证据强度更新可信度。",
+    "ockham_note": "奥卡姆剃刀：当两个候选解释力接近时，优先选择能解释更多表面问题、但额外假设更少的那个。",
+    "selected": "线索数量增长 与 高意向客户识别能力不足的冲突",
+    "candidates": [
+      {
+        "name": "线索数量增长 与 高意向客户识别能力不足的冲突",
+        "prior": 0.2,
+        "likelihood": 0.9500000000000002,
+        "causal_leverage": 1.0,
+        "assumption_count": 1,
+        "parsimony": 0.92,
+        "posterior_raw": 0.17774400000000004,
+        "posterior": 0.26390683796419484
+      },
+      {
+        "name": "市场获客指标 与 收入转化指标割裂的冲突",
+        "prior": 0.2,
+        "likelihood": 0.8,
+        "causal_leverage": 0.8,
+        "assumption_count": 1,
+        "parsimony": 0.92,
+        "posterior_raw": 0.14720000000000003,
+        "posterior": 0.21855638754798742
+      },
+      {
+        "name": "销售跟进压力 与 分层优先级缺失的冲突",
+        "prior": 0.2,
+        "likelihood": 0.85,
+        "causal_leverage": 0.8,
+        "assumption_count": 2,
+        "parsimony": 0.84,
+        "posterior_raw": 0.14011200000000001,
+        "posterior": 0.2080324223649702
+      },
+      {
+        "name": "快速增长目标 与 产品包装不清晰的冲突",
+        "prior": 0.2,
+        "likelihood": 0.6399999999999999,
+        "causal_leverage": 0.6,
+        "assumption_count": 2,
+        "parsimony": 0.84,
+        "posterior_raw": 0.1053696,
+        "posterior": 0.15644836367782888
+      },
+      {
+        "name": "渠道数据分散 与 漏斗归因不清的冲突",
+        "prior": 0.2,
+        "likelihood": 0.62,
+        "causal_leverage": 0.6,
+        "assumption_count": 2,
+        "parsimony": 0.84,
+        "posterior_raw": 0.1030848,
+        "posterior": 0.15305598844501883
+      }
+    ]
+  },
+  "resource_allocation": {
+    "title": "销售与市场资源倾斜",
+    "unit": "%",
+    "note": "把资源从单纯买量和无差别外呼，转向高意向识别、分层跟进和漏斗反馈。",
+    "items": [
+      {
+        "label": "继续买量",
+        "current": 40,
+        "recommended": 20
+      },
+      {
+        "label": "无差别跟进",
+        "current": 35,
+        "recommended": 15
+      },
+      {
+        "label": "ICP和评分",
+        "current": 10,
+        "recommended": 30
+      },
+      {
+        "label": "高意向转化",
+        "current": 10,
+        "recommended": 25
+      },
+      {
+        "label": "漏斗复盘",
+        "current": 5,
+        "recommended": 10
+      }
+    ]
+  },
+  "stage_transition": {
+    "title": "主要矛盾动态转移",
+    "note": "当前先把线索识别和分层转化打通；一旦高意向漏斗稳定，主要矛盾可能转向产品包装、定价或渠道规模化。",
+    "stages": [
+      {
+        "stage": "当前90天",
+        "principal": "线索数量增长 与 高意向客户识别能力不足的冲突",
+        "trigger": "线索变多但MRR没有同步改善。"
+      },
+      {
+        "stage": "评分稳定后",
+        "principal": "高意向客户需求 与 产品包装不清晰的冲突",
+        "trigger": "高意向客户足够多，但成交仍被方案和价格卡住。"
+      },
+      {
+        "stage": "成交改善后",
+        "principal": "渠道扩张目标 与 可复制获客模型不足的冲突",
+        "trigger": "单点转化有效，但新增渠道无法复制。"
+      },
+      {
+        "stage": "规模化阶段",
+        "principal": "销售组织规模 与 培训管理能力不足的冲突",
+        "trigger": "新人销售转化明显低于老销售。"
+      }
+    ]
+  },
+  "visuals": {
+    "summary": "这组图展示为什么线索数量不是当前最关键的卡点，真正要先处理的是高意向客户识别和分层转化机制。",
+    "charts": [
+      {
+        "type": "analysis_flow",
+        "title": "分析流程图"
+      },
+      {
+        "type": "iceberg",
+        "title": "冰山模型"
+      },
+      {
+        "type": "decision_matrix",
+        "title": "矛盾候选决策矩阵"
+      },
+      {
+        "type": "resource_allocation",
+        "title": "资源倾斜图"
+      },
+      {
+        "type": "stage_transition",
+        "title": "动态阶段迁移图"
+      }
+    ]
+  },
+  "current_state_clarity": {
+    "score": 92,
+    "clarity_level": "clear",
+    "diagnosis_allowed": true,
+    "snapshot_ready": true,
+    "dimension_scores": {
+      "goal": 20,
+      "facts": 20,
+      "stage": 12,
+      "resources": 12,
+      "constraints": 12,
+      "stakeholders": 8,
+      "patterns": 8
+    },
+    "missing_dimensions": [],
+    "questions": [],
+    "snapshot": "现状清晰度：92/100（清楚）\n目标：90天内让新增MRR提升50%，同时把销售团队的无效跟进时间降下来。\n期限/成功标准：90天 / 高意向线索占比提升到35%以上；演示预约率达到28%；成交率达到7%；销售无效跟进时间下降30%。\n阶段：从获客扩张进入转化验证期\n资源：8名销售、3名市场、1名销售运营、每月约1200条新线索、已有CRM、活动报名表和官网表单数据、过去6个月的成交与流失记录\n约束：90天内必须看到新增MRR改善、市场预算不能继续大幅增加、销售已经被低质量线索占满，不能靠继续加班解决、产品定价和功能暂时不能大改\n相关方：CEO、销售负责人、市场负责人、销售运营、一线销售、潜在客户\n已知事实：月度线索数从约600条涨到约1200条。；演示预约率约18%，成交率约4%。；销售团队认为线索质量差，市场团队认为销售跟进不及时。"
+  },
+  "review": {
+    "review_time": "14天看分层执行，30天看渠道漏斗，90天看MRR结果。",
+    "review_conditions": [
+      "高意向线索占比超过35%。",
+      "演示预约率达到28%。",
+      "成交率仍低于5%。",
+      "销售无效跟进时间没有下降。"
+    ],
+    "evidence_to_collect": [
+      "A/B/C类线索占比",
+      "24小时跟进率",
+      "演示预约率",
+      "成交率",
+      "各渠道高意向线索成本"
+    ]
+  },
+  "warnings": [
+    "本报告为虚构业务示例，仅用于展示skill输出效果。",
+    "概率为结构化估算，不代表真实经营承诺。"
+  ],
+  "summary": {
+    "one_sentence": "现在最该先解决的是：线索数量增长 与 高意向客户识别能力不足的冲突",
+    "principal_aspect": "高意向客户识别能力不足当前占支配地位",
+    "confidence_label": "中",
+    "principal_score": 4.750000000000001,
+    "first_action": "7天内定义高意向客户画像和淘汰标准，暂停只看线索数量的复盘。",
+    "recommended_probability": 0.42578000000000005,
+    "current_state_score": 92,
+    "current_state_level": "clear"
+  },
+  "generation": {
+    "paths": {
+      "json": "reports/github-examples/example-b2b-saas-sales-conversion.report.json",
+      "markdown": "reports/github-examples/example-b2b-saas-sales-conversion.md",
+      "html": "reports/github-examples/example-b2b-saas-sales-conversion.html",
+      "docx": "reports/github-examples/example-b2b-saas-sales-conversion.docx",
+      "pdf": "reports/github-examples/example-b2b-saas-sales-conversion.pdf"
+    },
+    "warnings": []
+  }
+}
