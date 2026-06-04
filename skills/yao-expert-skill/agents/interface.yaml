@@ -1,0 +1,24 @@
+interface:
+  display_name: "Yao Expert Skill"
+  short_description: "Turn any field or idea into an expert learning report, tutorial, keyword system, Feynman tests, and Markdown/DOCX/PDF/HTML exports"
+  default_prompt: "Use $yao-expert-skill to turn my domain, industry, technology, market, role, product direction, or vague idea into a source-backed expert learning report and tutorial with 50-100 keyword cards, 10 Feynman self-tests, and Markdown/Word/PDF/HTML exports with layout validation."
+compatibility:
+  canonical_format: "agent-skills"
+  adapter_targets:
+    - "openai"
+    - "claude"
+    - "generic"
+  activation:
+    mode: "manual"
+    paths: []
+  execution:
+    context: "inline"
+    shell: "bash"
+  trust:
+    source_tier: "local"
+    remote_inline_execution: "forbid"
+    remote_metadata_policy: "allow-metadata-only"
+  degradation:
+    openai: "metadata-adapter"
+    claude: "neutral-source-plus-adapter"
+    generic: "neutral-source"

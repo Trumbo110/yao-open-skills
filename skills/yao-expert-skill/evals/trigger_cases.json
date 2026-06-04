@@ -1,0 +1,22 @@
+{
+  "recommended_threshold": 0.34,
+  "should_trigger": [
+    "帮我快速了解储能行业，输出专家学习报告、关键词库、费曼问题，并导出 Word、PDF、HTML。",
+    "Use this vague AI agent idea to build a domain expertise packet with research, a tutorial, keyword cards, and self-tests.",
+    "我想研究低空经济，默认中国市场，给我一份能让团队新人快速入门又能支撑商业判断的专家报告。",
+    "Create a source-backed expert learning guide for precision medicine, with boundary definitions, classifications, evidence labels, and four export formats.",
+    "把这个领域拆成专家学习教程：先让我懂边界、价值链、生命周期、代表公司、关键词和自测题。"
+  ],
+  "should_not_trigger": [
+    "一句话解释什么是储能。",
+    "只帮我把这个 Markdown 转成 PDF。",
+    "设计一个课程销售落地页。",
+    "分析这家公司的商业模式和定价策略。",
+    "写一篇没有来源要求的营销软文。"
+  ],
+  "near_neighbor": [
+    "做一个通用初学者教程，不需要行业结构、关键词库或专家测试。",
+    "帮我做纯商业模式诊断和竞品变现分析。",
+    "搜索资料并总结链接，但不需要报告或教程成品。"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "yao-expert-skill-route-eval",
+  "target_skill": "yao-expert-skill",
+  "positive_intents": [
+    "expert learning report",
+    "industry quick cognition",
+    "domain expertise packet",
+    "keyword library",
+    "Feynman self-test",
+    "Markdown DOCX PDF HTML exports"
+  ],
+  "negative_intents": [
+    "short factual answer",
+    "file conversion only",
+    "pure business model analysis",
+    "standalone course homepage",
+    "unsourced opinion writing"
+  ],
+  "route_confusions": [
+    "learning-builder",
+    "yao-tutorial-skill",
+    "yao-business-skill",
+    "keyword-report-generator"
+  ]
+}

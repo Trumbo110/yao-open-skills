@@ -1,0 +1,19 @@
+{
+  "topic": "",
+  "topic_type": "domain | industry | technology | market | role | product_idea | vague_idea",
+  "region": "default_from_context_or_user_language",
+  "purpose": "quick_domain_expertise",
+  "audience": "self_or_team_learning",
+  "time_horizon": "current_to_next_3_years",
+  "depth": "standard",
+  "language": "zh-CN",
+  "formats": ["md", "docx", "pdf", "html"],
+  "keyword_count": 80,
+  "needs_company_or_case_list": true,
+  "needs_action_advice": true,
+  "must_use_sources": [],
+  "forbidden_sources": [],
+  "exclusions": [],
+  "privacy_constraints": [],
+  "output_basename": ""
+}

@@ -1,0 +1,1890 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>中国新型储能行业专家学习报告</title>
+  <style>
+:root {
+  --bg: #f7f8fa;
+  --paper: #ffffff;
+  --ink: #1d232a;
+  --muted: #5b6675;
+  --line: #d8dee8;
+  --strong: #0f766e;
+  --soft: #edf7f5;
+  --table-head: #f1f5f9;
+  --code: #f6f8fa;
+  --shadow: 0 16px 42px rgba(20, 34, 51, 0.10);
+  --nav-width: 248px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  font-size: 16px;
+  line-height: 1.68;
+}
+
+.side-nav {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  width: var(--nav-width);
+  padding: 22px 14px 22px 18px;
+  border-right: 0;
+  background: transparent;
+  overflow-y: auto;
+}
+
+.nav-title {
+  display: block;
+  margin: 0 0 18px;
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.35;
+  text-decoration: none;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  scrollbar-width: thin;
+}
+
+.nav-links a {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 4px;
+  border: 1px solid transparent;
+  border-radius: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+.nav-index {
+  color: #8491a3;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.nav-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nav-links a:hover,
+.nav-links a[aria-current="true"] {
+  border-color: transparent;
+  background: transparent;
+  color: var(--strong);
+  font-weight: 700;
+}
+
+.report-shell {
+  width: min(1040px, calc(100% - var(--nav-width) - 56px));
+  margin: 28px 32px 64px calc(var(--nav-width) + 28px);
+  padding: 48px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--ink);
+  line-height: 1.28;
+  letter-spacing: 0;
+}
+
+h1 {
+  margin: 0 0 28px;
+  font-size: 34px;
+}
+
+h2 {
+  margin: 44px 0 18px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+  font-size: 24px;
+}
+
+h3 {
+  margin: 28px 0 12px;
+  font-size: 18px;
+}
+
+p,
+ul,
+ol,
+blockquote {
+  margin: 0 0 16px;
+}
+
+blockquote {
+  padding: 12px 16px;
+  border-left: 4px solid var(--strong);
+  background: var(--soft);
+  color: var(--muted);
+}
+
+table {
+  width: 100%;
+  margin: 18px 0 26px;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border: 1px solid var(--line);
+  font-size: 14px;
+}
+
+th,
+td {
+  padding: 9px 10px;
+  border: 1px solid var(--line);
+  vertical-align: top;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+th {
+  background: var(--table-head);
+  font-weight: 700;
+}
+
+table.table-fit col {
+  width: auto;
+}
+
+th.col-compact,
+td.col-compact {
+  white-space: nowrap;
+  overflow-wrap: normal;
+  word-break: keep-all;
+  vertical-align: middle;
+}
+
+th.col-center,
+td.col-center,
+th.col-number,
+td.col-number {
+  text-align: center !important;
+  font-variant-numeric: tabular-nums;
+}
+
+tr:nth-child(even) td {
+  background: #fbfcfe;
+}
+
+pre,
+code {
+  border-radius: 6px;
+  background: var(--code);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+code {
+  padding: 1px 4px;
+}
+
+pre {
+  padding: 14px 16px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+pre code {
+  padding: 0;
+}
+
+a {
+  color: var(--strong);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 900px) {
+  .side-nav {
+    position: sticky;
+    width: 100%;
+    max-height: 42vh;
+    padding: 12px 14px;
+    border-right: 0;
+    border-bottom: 0;
+    background: var(--bg);
+  }
+
+  .nav-title {
+    margin-bottom: 10px;
+    -webkit-line-clamp: 1;
+  }
+
+  .nav-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(112px, 1fr));
+    max-height: 150px;
+    overflow-y: auto;
+  }
+
+  .report-shell {
+    width: min(100% - 18px, 1120px);
+    margin: 14px auto 34px;
+    padding: 24px 16px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 21px;
+  }
+
+  table {
+    font-size: 13px;
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 13mm 12mm;
+  }
+
+  body {
+    background: #fff;
+    font-size: 10.5pt;
+    line-height: 1.45;
+  }
+
+  .side-nav {
+    display: none;
+  }
+
+  .report-shell {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  h2 {
+    break-after: avoid;
+    margin-top: 24px;
+    margin-bottom: 10px;
+    font-size: 15pt;
+  }
+
+  h1 {
+    font-size: 21pt;
+    margin-bottom: 18px;
+  }
+
+  h3 {
+    font-size: 12.5pt;
+    margin-top: 18px;
+    margin-bottom: 8px;
+  }
+
+  h4 {
+    margin-top: 12px;
+    margin-bottom: 6px;
+  }
+
+  table {
+    margin: 10px 0 16px;
+    font-size: 8.8pt;
+    line-height: 1.32;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  tr {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  th,
+  td {
+    padding: 5px 6px;
+  }
+
+  table,
+  blockquote,
+  pre {
+    break-inside: avoid;
+  }
+
+  blockquote {
+    padding: 8px 10px;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <nav class="side-nav" aria-label="报告目录">
+    <a class="nav-title" href="#top">中国新型储能行业专家学习报告</a>
+    <ol class="nav-links">
+      <li><a href="#section-01" title="导读摘要"><span class="nav-index">01</span><span class="nav-label">导读摘要</span></a></li>
+      <li><a href="#section-06" title="0. 默认假设与研究边界"><span class="nav-index">02</span><span class="nav-label">默认边界</span></a></li>
+      <li><a href="#section-07" title="1. 一页专家速览"><span class="nav-index">03</span><span class="nav-label">专家速览</span></a></li>
+      <li><a href="#section-11" title="2. 领域定义、边界与排除项"><span class="nav-index">04</span><span class="nav-label">边界定义</span></a></li>
+      <li><a href="#section-12" title="3. 多口径分类地图"><span class="nav-index">05</span><span class="nav-label">分类地图</span></a></li>
+      <li><a href="#section-13" title="4. 价值链、参与者与利润池"><span class="nav-index">06</span><span class="nav-label">价值利润</span></a></li>
+      <li><a href="#section-14" title="5. 当前状态八维诊断"><span class="nav-index">07</span><span class="nav-label">八维诊断</span></a></li>
+      <li><a href="#section-15" title="6. 生命周期与变化变量"><span class="nav-index">08</span><span class="nav-label">生命周期</span></a></li>
+      <li><a href="#section-16" title="7. 竞争结构、壁垒与替代风险"><span class="nav-index">09</span><span class="nav-label">竞争壁垒</span></a></li>
+      <li><a href="#section-17" title="8. 政策、标准、技术与资本信号"><span class="nav-index">10</span><span class="nav-label">政策信号</span></a></li>
+      <li><a href="#section-18" title="9. 代表公司、人物、机构、案例或实践场景"><span class="nav-index">11</span><span class="nav-label">代表锚点</span></a></li>
+      <li><a href="#section-25" title="10. 关键词库与概念关系图"><span class="nav-index">12</span><span class="nav-label">关键词库</span></a></li>
+      <li><a href="#section-29" title="11. 专家学习教程"><span class="nav-index">13</span><span class="nav-label">学习教程</span></a></li>
+      <li><a href="#section-30" title="12. 费曼问题、参考答案与评分"><span class="nav-index">14</span><span class="nav-label">费曼自测</span></a></li>
+      <li><a href="#section-31" title="13. 机会、风险与验证清单"><span class="nav-index">15</span><span class="nav-label">机会风险</span></a></li>
+      <li><a href="#section-32" title="14. 不确定性日志"><span class="nav-index">16</span><span class="nav-label">不确定性</span></a></li>
+      <li><a href="#section-33" title="15. 参考资料"><span class="nav-index">17</span><span class="nav-label">参考资料</span></a></li>
+    </ol>
+  </nav>
+  <main class="report-shell">
+<h1 id="top">中国新型储能行业专家学习报告</h1>
+<blockquote>
+<p>示例说明：这是一份用于展示 <code>yao-expert-skill</code>
+输出形态的精简版样例。正式标准版会把关键词扩展到 50-80
+个，并按用户目的补充更多公司、人物、机构、案例、数据和来源。</p>
+</blockquote>
+<h2 id="section-01">导读摘要</h2>
+<h3 id="section-02">这份学习材料解决什么问题</h3>
+<p>这份材料是给第一次系统接触新型储能的人看的。它不假设你已经懂电力系统、锂电池或电力市场，而是先用相对直白的语言说明：储能到底在解决什么问题、行业里有哪些角色、为什么装机规模很重要但又不能只看装机。</p>
+<p>读完这份报告，你应该能完成三件事：第一，用几句话向外行解释新型储能为什么存在；第二，看懂电芯、PCS、EMS、独立储能、等效利用小时这些关键词之间的关系；第三，知道继续判断这个行业时应该去验证哪些数据和真实案例。</p>
+<h3 id="section-03">本报告的三个亮点</h3>
+<ol type="1">
+<li>它先定边界，再看结构，避免把动力电池、抽水蓄能、户外电源和电网侧储能混在一起。</li>
+<li>它把关键词做成教学卡，每个词都给出通俗理解、概念阐述、底层逻辑、真实例子和应用场景。</li>
+<li>它最后用费曼问题做自测，帮助你判断自己是真的理解了行业，还是只是记住了一批术语。</li>
+</ol>
+<h3 id="section-04">推荐阅读路径</h3>
+<p>如果你是完全陌生的新手，建议先读“默认假设与研究边界”和“一页专家速览”，先把行业大图放进脑子里。然后读“价值链”和“关键词库”，理解这个行业的语言和角色。如果你是创业、产品或销售视角，可以重点看“竞争结构”“代表锚点”和“机会风险”；如果你要带团队学习，可以直接把“专家学习教程”和“费曼自测”作为内部训练材料。</p>
+<h3 id="section-05">底层逻辑说明</h3>
+<p>这份报告按“边界 -&gt; 结构 -&gt; 动态 -&gt; 例子 -&gt;
+自测”的顺序展开。先定边界，是为了避免研究对象混乱；再看分类和价值链，是为了知道行业由哪些角色组成；接着看市场状态、生命周期和竞争，是为了理解行业为什么正在变化；最后用公司、人物、关键词、教程和自测，把抽象概念转成新人能复述、能讨论、能继续验证的知识。</p>
+<h2 id="section-06">0. 默认假设与研究边界</h2>
+<p>先说明这份报告默认站在哪个口径上。新型储能这个词本身就容易和动力电池、抽水蓄能、户外电源混用，所以在正式分析之前，需要先把地域、用途、时间范围和排除项讲清楚。这样后面的数据、公司和案例才不会被错误放在一起比较。</p>
+<table class="report-table table-fit">
+<colgroup>
+  <col class="col-compact col-short" style="width: 19.09%;">
+  <col class="col-medium" style="width: 32.73%;">
+  <col class="col-long" style="width: 48.18%;">
+</colgroup>
+<thead>
+<tr>
+<th class="col-compact col-short">项目</th>
+<th class="col-medium">当前设定</th>
+<th class="col-long">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="col-compact col-short">主题</td>
+<td class="col-medium">中国新型储能行业</td>
+<td class="col-long">以电力系统侧新型储能为主</td>
+</tr>
+<tr>
+<td class="col-compact col-short">地域</td>
+<td class="col-medium">中国</td>
+<td class="col-long">政策、市场机制和电网场景以中国为口径</td>
+</tr>
+<tr>
+<td class="col-compact col-short">用途</td>
+<td class="col-medium">快速建立专家认知</td>
+<td class="col-long">适合团队新人、创业预研、产品和销售理解</td>
+</tr>
+<tr>
+<td class="col-compact col-short">时间范围</td>
+<td class="col-medium">当前到未来3年</td>
+<td class="col-long">覆盖 2025-2027 政策窗口</td>
+</tr>
+<tr>
+<td class="col-compact col-short">深度</td>
+<td class="col-medium">示例精简版</td>
+<td class="col-long">仅展示结构，不追求完整行业穷尽</td>
+</tr>
+<tr>
+<td class="col-compact col-short">排除项</td>
+<td class="col-medium">抽水蓄能深度研究、海外市场、单家公司财务模型</td>
+<td class="col-long">避免范围漂移</td>
+</tr>
+</tbody>
+</table>
+<h2 id="section-07">1. 一页专家速览</h2>
+<p>这一节是整份报告的压缩版。你可以先把它当作行业地图：知道一句话定义、几个核心事实和几个关键判断之后，再进入后面的边界、价值链和关键词学习，会更容易把信息串起来。</p>
+<h3 id="section-08">一句话定义</h3>
+<p>新型储能是除传统抽水蓄能以外、帮助电力系统在“电多时存起来、电少时放出来”的一组技术和商业安排，核心价值是让新能源、电网调节和电力保供更稳定。</p>
+<h3 id="section-09">五个核心事实</h3>
+<ol type="1">
+<li><code>fact</code>：国家能源局口径下，新型储能不包含传统抽水蓄能，典型作用是在新能源大发或低负荷时充电，在需要时放电。</li>
+<li><code>fact</code>：截至 2025
+年底，全国已建成投运新型储能装机规模达到 1.36 亿千瓦 / 3.51 亿千瓦时，较
+2024 年底增长 84%，平均储能时长 2.58 小时。</li>
+<li><code>fact</code>：截至 2025
+年底，锂离子电池储能仍占主导，装机占比为
+96.1%；压缩空气、液流电池、飞轮等路线合计占比 3.9%。</li>
+<li><code>fact</code>：2025 年独立储能新增装机 3543
+万千瓦，累计装机占比为
+51.2%，说明商业角色正在从“新能源配套”向“独立调节资源”移动。</li>
+<li><code>fact</code>：国家发展改革委、国家能源局在 2025
+年印发《新型储能规模化建设专项行动方案（2025-2027年）》，把规模化建设和高质量发展放到政策主线。</li>
+</ol>
+<h3 id="section-10">五个关键判断</h3>
+<table class="report-table table-fit">
+<colgroup>
+  <col class="col-long" style="width: 46.42%;">
+  <col class="col-compact col-short" style="width: 8.55%;">
+  <col class="col-long" style="width: 36.48%;">
+  <col class="col-compact col-short" style="width: 8.55%;">
+</colgroup>
+<thead>
+<tr>
+<th class="col-long">判断</th>
+<th class="col-compact col-short col-center">类型</th>
+<th class="col-long">证据</th>
+<th class="col-compact col-short col-center">置信度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="col-long">新型储能已从示范期进入规模化建设期。</td>
+<td class="col-compact col-short col-center">inference</td>
+<td class="col-long">2025 年底装机、独立储能占比、2025-2027 专项行动方案</td>
+<td class="col-compact col-short col-center">high</td>
+</tr>
+<tr>
+<td class="col-long">行业最大瓶颈正在从“能不能建”转向“能不能被有效调用并获得稳定收益”。</td>
+<td class="col-compact col-short col-center">inference</td>
+<td class="col-long">等效利用小时提升、政策强调市场机制和调度运用</td>
+<td class="col-compact col-short col-center">medium</td>
+</tr>
+<tr>
+<td class="col-long">短时锂电仍是主流，但长时储能会成为未来3年的观察重点。</td>
+<td class="col-compact col-short col-center">hypothesis</td>
+<td class="col-long">4小时及以上项目占比提高，非锂路线仍小但被政策和试点关注</td>
+<td class="col-compact col-short col-center">medium</td>
+</tr>
+<tr>
+<td class="col-long">对创业者而言，纯电芯制造门槛高，系统集成、EMS、运维、安全监测和交易运营更适合寻找细分机会。</td>
+<td class="col-compact col-short col-center">inference</td>
+<td class="col-long">产业链分工、项目大型化、市场化调用需求</td>
+<td class="col-compact col-short col-center">medium</td>
+</tr>
+<tr>
+<td class="col-long">低价竞争和安全事故是行业认知中不能忽视的两类风险。</td>
+<td class="col-compact col-short col-center">hypothesis</td>
+<td class="col-long">技术路线集中、规模扩张、监管持续强调安全管理</td>
+<td class="col-compact col-short col-center">medium</td>
+</tr>
+</tbody>
+</table>
+<h2 id="section-11">2. 领域定义、边界与排除项</h2>
+<p>理解新型储能，最容易踩的坑是把“所有和电池有关的东西”都放进来。这个行业的关键不是电池本身，而是这些技术如何服务电力系统调节。下面的边界表会帮助你区分宽口径、窄口径和本报告真正采用的数据口径。</p>
+<table class="report-table table-fit">
+<colgroup>
+  <col class="col-compact col-short" style="width: 12.28%;">
+  <col class="col-medium" style="width: 21.05%;">
+  <col class="col-long" style="width: 45.61%;">
+  <col class="col-medium" style="width: 21.06%;">
+</colgroup>
+<thead>
+<tr>
+<th class="col-compact col-short col-center">口径</th>
+<th class="col-medium">定义</th>
+<th class="col-long">包含</th>
+<th class="col-medium">排除</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="col-compact col-short col-center">宽口径</td>
+<td class="col-medium">储能产业生态</td>
+<td class="col-long">抽水蓄能、新型储能、设备、系统、运营、电力市场服务</td>
+<td class="col-medium">与电力调节无关的消费电池</td>
+</tr>
+<tr>
+<td class="col-compact col-short col-center">窄口径</td>
+<td class="col-medium">新型储能电力应用</td>
+<td class="col-long">锂电、液流、压缩空气、飞轮、钠离子、EMS、PCS、BMS、储能电站</td>
+<td class="col-medium">抽水蓄能深度研究</td>
+</tr>
+<tr>
+<td class="col-compact col-short col-center">数据口径</td>
+<td class="col-medium">国家能源局新型储能口径</td>
+<td class="col-long">除传统抽水蓄能外的储能技术</td>
+<td class="col-medium">不同咨询机构的口径混用</td>
+</tr>
+<tr>
+<td class="col-compact col-short col-center">排除口径</td>
+<td class="col-medium">容易误放入的对象</td>
+<td class="col-long">动力电池产能、户外电源、消费电子电池</td>
+<td class="col-medium">与电网侧价值无直接关系的产品</td>
+</tr>
+</tbody>
+</table>
+<h2 id="section-12">3. 多口径分类地图</h2>
+<p>同一个行业，不同人会用不同方式切分。监管部门关心政策和装机，企业关心产品和场景，投资人关心可比公司和商业模式，电网则关心调节能力。把这些口径放在一起看，能避免只用单一分类解释所有问题。</p>
+<table class="report-table table-fit">
+<colgroup>
+  <col class="col-compact col-short" style="width: 13.31%;">
+  <col class="col-medium" style="width: 22.81%;">
+  <col class="col-medium" style="width: 22.81%;">
+  <col class="col-long" style="width: 41.07%;">
+</colgroup>
+<thead>
+<tr>
+<th class="col-compact col-short">分类视角</th>
+<th class="col-medium">用途</th>
+<th class="col-medium">典型问题</th>
+<th class="col-long">代表依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="col-compact col-short">官方/政策口径</td>
+<td class="col-medium">看装机、政策、监管</td>
+<td class="col-medium">什么算新型储能</td>
+<td class="col-long">国家能源局、国家发展改革委文件</td>
+</tr>
+<tr>
+<td class="col-compact col-short">技术路线</td>
+<td class="col-medium">看成熟度和替代风险</td>
+<td class="col-medium">用什么方式存电</td>
+<td class="col-long">锂离子、液流、压缩空气、飞轮等</td>
+</tr>
+<tr>
+<td class="col-compact col-short">应用场景</td>
+<td class="col-medium">看需求和收益来源</td>
+<td class="col-medium">谁需要调节能力</td>
+<td class="col-long">独立储能、新能源配储、工商业储能、电网侧储能</td>
+</tr>
+<tr>
+<td class="col-compact col-short">价值链角色</td>
+<td class="col-medium">看企业赚哪段钱</td>
+<td class="col-medium">谁制造，谁集成，谁运营</td>
+<td class="col-long">电芯、PCS、BMS、EMS、系统集成、EPC、运维</td>
+</tr>
+<tr>
+<td class="col-compact col-short">商业模式</td>
+<td class="col-medium">看现金流</td>
+<td class="col-medium">靠容量、电量、辅助服务还是价差</td>
+<td class="col-long">电力市场、容量补偿、峰谷套利、租赁</td>
+</tr>
+</tbody>
+</table>
+<h2 id="section-13">4. 价值链、参与者与利润池</h2>
+<p>当边界和分类清楚以后，就要看行业里谁在做什么。储能不是一个单点产品，而是一条从电芯、设备、集成、建设到运营和交易的链条。不同环节的能力、收入来源和风险都不一样，所以理解价值链是看懂商业机会的前提。</p>
+<table class="report-table table-fit">
+<colgroup>
+  <col class="col-compact col-short" style="width: 12.73%;">
+  <col class="col-medium" style="width: 21.82%;">
+  <col class="col-medium" style="width: 21.82%;">
+  <col class="col-medium" style="width: 21.82%;">
+  <col class="col-medium" style="width: 21.81%;">
+</colgroup>
+<thead>
+<tr>
+<th class="col-compact col-short">环节/角色</th>
+<th class="col-medium">核心能力</th>
+<th class="col-medium">收入或价值来源</th>
+<th class="col-medium">壁垒</th>
+<th class="col-medium">观察指标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="col-compact col-short">电芯与材料</td>
+<td class="col-medium">电化学体系、制造良率</td>
+<td class="col-medium">电芯销售</td>
+<td class="col-medium">规模、成本、质量、安全</td>
+<td class="col-medium">单 Wh 成本、循环寿命、良率</td>
+</tr>
+<tr>
+<td class="col-compact col-short">PCS/BMS/EMS</td>
+<td class="col-medium">电力电子、控制、安全</td>
+<td class="col-medium">设备和软件销售</td>
+<td class="col-medium">控制算法、并网适配、可靠性</td>
+<td class="col-medium">转换效率、故障率、响应速度</td>
+</tr>
+<tr>
+<td class="col-compact col-short">系统集成</td>
+<td class="col-medium">设备选型、集成交付</td>
+<td class="col-medium">项目收入</td>
+<td class="col-medium">交付经验、认证、供应链</td>
+<td class="col-medium">毛利率、项目周期、验收通过率</td>
+</tr>
+<tr>
+<td class="col-compact col-short">EPC/建设</td>
+<td class="col-medium">工程设计和施工</td>
+<td class="col-medium">工程服务费</td>
+<td class="col-medium">资质、工程管理</td>
+<td class="col-medium">工期、质量、安全记录</td>
+</tr>
+<tr>
+<td class="col-compact col-short">电站运营</td>
+<td class="col-medium">调度、交易、运维</td>
+<td class="col-medium">电力市场收益、容量或租赁收益</td>
+<td class="col-medium">市场理解、数据、运维能力</td>
+<td class="col-medium">等效利用小时、可用率、收益率</td>
+</tr>
+<tr>
+<td class="col-compact col-short">安全与检测</td>
+<td class="col-medium">风险监测、认证、消防</td>
+<td class="col-medium">检测、运维、安全服务</td>
+<td class="col-medium">标准、资质、公信力</td>
+<td class="col-medium">热失控预警、事故率、响应时间</td>
+</tr>
+</tbody>
+</table>
+<h2 id="section-14">5. 当前状态八维诊断</h2>
+<p>这一节回答“现在行业处在什么状态”。单看市场规模容易觉得一切都在高速增长，但真实判断还要同时看需求、供给、竞争、政策、技术和收益机制。八个维度放在一起，能让读者看到增长背后的约束。</p>
+<table class="report-table table-fit">
+<colgroup>
+  <col class="col-compact col-short" style="width: 11.95%;">
+  <col class="col-long" style="width: 33.85%;">
+  <col class="col-long" style="width: 33.71%;">
+  <col class="col-medium" style="width: 20.49%;">
+</colgroup>
+<thead>
+<tr>
+<th class="col-compact col-short">维度</th>
+<th class="col-long">当前状态</th>
+<th class="col-long">关键证据</th>
+<th class="col-medium">不确定性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="col-compact col-short">市场</td>
+<td class="col-long">高速扩张后进入规模化建设</td>
+<td class="col-long">2025 年底 1.36 亿千瓦 / 3.51 亿千瓦时</td>
+<td class="col-medium">不同机构统计口径差异</td>
+</tr>
+<tr>
+<td class="col-compact col-short">需求</td>
+<td class="col-long">新能源消纳、电网调峰、保供共同驱动</td>
+<td class="col-long">国家能源局发布会说明其支撑新能源消纳和稳定运行</td>
+<td class="col-medium">各省电力市场收益差异</td>
+</tr>
+<tr>
+<td class="col-compact col-short">供给</td>
+<td class="col-long">锂电路线占绝对主导</td>
+<td class="col-long">2025 年底锂电占比 96.1%</td>
+<td class="col-medium">价格战对质量和盈利的影响</td>
+</tr>
+<tr>
+<td class="col-compact col-short">竞争</td>
+<td class="col-long">产业链长，参与者多，项目大型化</td>
+<td class="col-long">10万千瓦以上项目占比达 72%</td>
+<td class="col-medium">头部集中度和地方项目质量</td>
+</tr>
+<tr>
+<td class="col-compact col-short">价值链</td>
+<td class="col-long">利润从设备销售逐步向运营、交易、软件和安全服务延伸</td>
+<td class="col-long">独立储能占比提升</td>
+<td class="col-medium">市场机制兑现速度</td>
+</tr>
+<tr>
+<td class="col-compact col-short">政策/标准</td>
+<td class="col-long">政策持续推动规模化和高质量</td>
+<td class="col-long">2025-2027 专项行动方案</td>
+<td class="col-medium">地方执行差异</td>
+</tr>
+<tr>
+<td class="col-compact col-short">技术</td>
+<td class="col-long">短时锂电成熟，长时路线被关注</td>
+<td class="col-long">4小时及以上项目占比达 27.6%</td>
+<td class="col-medium">非锂技术经济性</td>
+</tr>
+<tr>
+<td class="col-compact col-short">资本/财务</td>
+<td class="col-long">投资规模大，但收益模型仍需市场化完善</td>
+<td class="col-long">2021-2025 期间直接带动投资接近 2000 亿元</td>
+<td class="col-medium">项目 IRR 与真实调用水平</td>
+</tr>
+</tbody>
+</table>
+<h2 id="section-15">6. 生命周期与变化变量</h2>
+<p>生命周期判断的意义，不是简单说行业处在成长还是成熟，而是帮助我们知道下一步该盯什么。新型储能整体在成长，但短时锂电、长时储能和独立储能的成熟度并不一样，所以这里把细分领域分开看。</p>
+<table class="report-table table-fit">
+<colgroup>
+  <col class="col-medium" style="width: 21.82%;">
+  <col class="col-compact col-short" style="width: 12.73%;">
+  <col class="col-medium" style="width: 21.82%;">
+  <col class="col-medium" style="width: 21.82%;">
+  <col class="col-medium" style="width: 21.81%;">
+</colgroup>
+<thead>
+<tr>
+<th class="col-medium">细分领域</th>
+<th class="col-compact col-short">阶段判断</th>
+<th class="col-medium">证据</th>
+<th class="col-medium">例外/反例</th>
+<th class="col-medium">未来变量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="col-medium">电力系统新型储能整体</td>
+<td class="col-compact col-short">成长期</td>
+<td class="col-medium">装机快速增长、政策专项行动</td>
+<td class="col-medium">局部项目收益不稳定</td>
+<td class="col-medium">市场化调用和收益机制</td>
+</tr>
+<tr>
+<td class="col-medium">锂电短时储能</td>
+<td class="col-compact col-short">成长期后段</td>
+<td class="col-medium">技术主流、项目大型化</td>
+<td class="col-medium">价格战和安全压力</td>
+<td class="col-medium">成本、质量、安全标准</td>
+</tr>
+<tr>
+<td class="col-medium">长时储能</td>
+<td class="col-compact col-short">导入到成长早期</td>
+<td class="col-medium">4小时及以上占比提升</td>
+<td class="col-medium">非锂路线占比仍低</td>
+<td class="col-medium">技术成本、示范项目效果</td>
+</tr>
+<tr>
+<td class="col-medium">独立储能</td>
+<td class="col-compact col-short">成长期</td>
+<td class="col-medium">累计装机占比 51.2%</td>
+<td class="col-medium">地方市场规则差异</td>
+<td class="col-medium">电力现货和辅助服务市场</td>
+</tr>
+</tbody>
+</table>
+<h2 id="section-16">7. 竞争结构、壁垒与替代风险</h2>
+<p>看完生命周期之后，还要看行业里的力量如何互相挤压。储能不是只有同行竞争，还会受到替代调节资源、上游电芯、下游电网和工商业客户的影响。理解这些力量，才能判断哪里有壁垒，哪里只是短期热闹。</p>
+<table class="report-table table-fit">
+<colgroup>
+  <col class="col-compact col-short" style="width: 12.46%;">
+  <col class="col-long" style="width: 36.54%;">
+  <col class="col-medium" style="width: 21.35%;">
+  <col class="col-long" style="width: 29.65%;">
+</colgroup>
+<thead>
+<tr>
+<th class="col-compact col-short">力量</th>
+<th class="col-long">当前判断</th>
+<th class="col-medium">证据</th>
+<th class="col-long">对学习/行动的影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="col-compact col-short">现有竞争</td>
+<td class="col-long">设备侧竞争强，运营侧能力分化</td>
+<td class="col-medium">锂电占比高，项目大型化</td>
+<td class="col-long">不要只看装机，要看利用和收益</td>
+</tr>
+<tr>
+<td class="col-compact col-short">潜在进入者</td>
+<td class="col-long">系统集成和运维进入者较多</td>
+<td class="col-medium">产业链长、地方项目多</td>
+<td class="col-long">需要用资质、案例、数据能力筛选</td>
+</tr>
+<tr>
+<td class="col-compact col-short">替代品</td>
+<td class="col-long">抽水蓄能、火电灵活性、需求响应都是替代/互补</td>
+<td class="col-medium">电力系统调节资源多元</td>
+<td class="col-long">新型储能不是唯一调节方式</td>
+</tr>
+<tr>
+<td class="col-compact col-short">供应方</td>
+<td class="col-long">电芯和关键设备影响成本与交付</td>
+<td class="col-medium">锂电路线主导</td>
+<td class="col-long">上游价格和质量控制重要</td>
+</tr>
+<tr>
+<td class="col-compact col-short">购买方</td>
+<td class="col-long">电网、发电企业、工商业用户议价能力强</td>
+<td class="col-medium">项目多依赖场景和政策</td>
+<td class="col-long">商业模型要从客户收益倒推</td>
+</tr>
+</tbody>
+</table>
+<h2 id="section-17">8. 政策、标准、技术与资本信号</h2>
+<p>新型储能的行业节奏很大程度上受政策、标准、技术路线和市场机制影响。对新人来说，不需要一开始就读完所有政策文件，但要知道哪些信号会改变行业走向，后续跟踪时才有重点。</p>
+<table class="report-table table-fit">
+<colgroup>
+  <col class="col-compact col-short" style="width: 14.81%;">
+  <col class="col-medium" style="width: 25.39%;">
+  <col class="col-medium" style="width: 25.39%;">
+  <col class="col-long" style="width: 34.41%;">
+</colgroup>
+<thead>
+<tr>
+<th class="col-compact col-short">信号类型</th>
+<th class="col-medium">关键内容</th>
+<th class="col-medium">为什么重要</th>
+<th class="col-long">跟踪方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="col-compact col-short">政策</td>
+<td class="col-medium">2025-2027 专项行动方案</td>
+<td class="col-medium">决定规模化建设方向</td>
+<td class="col-long">跟踪国家发展改革委、国家能源局</td>
+</tr>
+<tr>
+<td class="col-compact col-short">调度</td>
+<td class="col-medium">新型储能调用水平提升</td>
+<td class="col-medium">影响真实收益</td>
+<td class="col-long">看等效利用小时和市场规则</td>
+</tr>
+<tr>
+<td class="col-compact col-short">安全</td>
+<td class="col-medium">电化学储能安全管理持续强化</td>
+<td class="col-medium">影响准入、保险和运维</td>
+<td class="col-long">看事故、标准、检测要求</td>
+</tr>
+<tr>
+<td class="col-compact col-short">技术</td>
+<td class="col-medium">长时储能占比提升</td>
+<td class="col-medium">影响技术路线选择</td>
+<td class="col-long">看 4小时及以上项目占比</td>
+</tr>
+<tr>
+<td class="col-compact col-short">市场</td>
+<td class="col-medium">独立储能占比提升</td>
+<td class="col-medium">影响商业模式</td>
+<td class="col-long">看独立储能参与现货、辅助服务</td>
+</tr>
+</tbody>
+</table>
+<h2 id="section-18">9. 代表公司、人物、机构、案例或实践场景</h2>
+<p>抽象概念需要落到真实对象上，才容易被理解。这里选取的公司、人物和角色不是排名，也不是投资建议，而是学习锚点：每个对象都对应一个行业逻辑，帮助你把概念和现实场景连起来。</p>
+<h3 id="section-19">学习锚点：宁德时代 CATL</h3>
+<table class="report-table table-fit">
+<colgroup>
+  <col class="col-medium" style="width: 33.64%;">
+  <col class="col-long" style="width: 66.36%;">
+</colgroup>
+<thead>
+<tr>
+<th class="col-medium">字段</th>
+<th class="col-long">内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="col-medium">类型</td>
+<td class="col-long">典型公司</td>
+</tr>
+<tr>
+<td class="col-medium">代表性原因</td>
+<td class="col-long">公开资料显示其业务覆盖动力电池和储能系统。</td>
+</tr>
+<tr>
+<td class="col-medium">它说明的底层逻辑</td>
+<td class="col-long">电芯能力和规模制造会影响储能系统成本、安全和供应链。</td>
+</tr>
+<tr>
+<td class="col-medium">新人可学什么</td>
+<td class="col-long">看储能不能只看电站，也要看电芯、材料和制造能力。</td>
+</tr>
+<tr>
+<td class="col-medium">不应过度推断</td>
+<td class="col-long">不能把电芯龙头的逻辑直接等同于所有储能运营项目的收益逻辑。</td>
+</tr>
+<tr>
+<td class="col-medium">来源</td>
+<td class="col-long">宁德时代官网</td>
+</tr>
+</tbody>
+</table>
+<h3 id="section-20">学习锚点：比亚迪储能</h3>
+<table class="report-table table-fit">
+<colgroup>
+  <col class="col-medium" style="width: 33.64%;">
+  <col class="col-long" style="width: 66.36%;">
+</colgroup>
+<thead>
+<tr>
+<th class="col-medium">字段</th>
+<th class="col-long">内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="col-medium">类型</td>
+<td class="col-long">典型公司</td>
+</tr>
+<tr>
+<td class="col-medium">代表性原因</td>
+<td class="col-long">官网显示其提供源网侧、工商业、微电网等储能解决方案。</td>
+</tr>
+<tr>
+<td class="col-medium">它说明的底层逻辑</td>
+<td class="col-long">储能公司不只是卖电池，还会按场景提供系统方案。</td>
+</tr>
+<tr>
+<td class="col-medium">新人可学什么</td>
+<td class="col-long">学会按应用场景理解产品，而不是只按电池型号理解。</td>
+</tr>
+<tr>
+<td class="col-medium">不应过度推断</td>
+<td class="col-long">官网产品矩阵能说明场景覆盖，但不能单独证明项目经济性。</td>
+</tr>
+<tr>
+<td class="col-medium">来源</td>
+<td class="col-long">比亚迪储能官网</td>
+</tr>
+</tbody>
+</table>
+<h3 id="section-21">学习锚点：阳光电源 Sungrow</h3>
+<table class="report-table table-fit">
+<colgroup>
+  <col class="col-medium" style="width: 30.59%;">
+  <col class="col-long" style="width: 69.41%;">
+</colgroup>
+<thead>
+<tr>
+<th class="col-medium">字段</th>
+<th class="col-long">内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="col-medium">类型</td>
+<td class="col-long">典型公司</td>
+</tr>
+<tr>
+<td class="col-medium">代表性原因</td>
+<td class="col-long">官网显示其储能系统覆盖 PCS、锂电池和
+EMS，并服务户用、工商业、公用事业侧。</td>
+</tr>
+<tr>
+<td class="col-medium">它说明的底层逻辑</td>
+<td class="col-long">储能系统集成的关键是电力电子、电化学和电网支撑能力的组合。</td>
+</tr>
+<tr>
+<td class="col-medium">新人可学什么</td>
+<td class="col-long">PCS/EMS 不是配件，而是储能能否并网、调度和赚钱的核心。</td>
+</tr>
+<tr>
+<td class="col-medium">不应过度推断</td>
+<td class="col-long">系统集成能力不等于每个市场和每个项目都有同样收益。</td>
+</tr>
+<tr>
+<td class="col-medium">来源</td>
+<td class="col-long">阳光电源官网</td>
+</tr>
+</tbody>
+</table>
+<h3 id="section-22">学习锚点：南网储能</h3>
+<table class="report-table table-fit">
+<colgroup>
+  <col class="col-medium" style="width: 30.51%;">
+  <col class="col-long" style="width: 69.49%;">
+</colgroup>
+<thead>
+<tr>
+<th class="col-medium">字段</th>
+<th class="col-long">内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="col-medium">类型</td>
+<td class="col-long">典型公司/运营平台</td>
+</tr>
+<tr>
+<td class="col-medium">代表性原因</td>
+<td class="col-long">公开资料显示其主营抽水蓄能、调峰水电和电网侧独立储能业务。</td>
+</tr>
+<tr>
+<td class="col-medium">它说明的底层逻辑</td>
+<td class="col-long">电站运营能力和电网调度理解决定储能资产能否被有效使用。</td>
+</tr>
+<tr>
+<td class="col-medium">新人可学什么</td>
+<td class="col-long">从运营商视角看储能：资产建成只是第一步，被调用才产生价值。</td>
+</tr>
+<tr>
+<td class="col-medium">不应过度推断</td>
+<td class="col-long">南网储能的区域和电网侧属性不能代表所有用户侧储能项目。</td>
+</tr>
+<tr>
+<td class="col-medium">来源</td>
+<td class="col-long">公司公开资料</td>
+</tr>
+</tbody>
+</table>
+<h3 id="section-23">学习锚点：曾毓群 / Robin Zeng</h3>
+<table class="report-table table-fit">
+<colgroup>
+  <col class="col-medium" style="width: 33.54%;">
+  <col class="col-long" style="width: 66.46%;">
+</colgroup>
+<thead>
+<tr>
+<th class="col-medium">字段</th>
+<th class="col-long">内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="col-medium">类型</td>
+<td class="col-long">代表人物</td>
+</tr>
+<tr>
+<td class="col-medium">代表性原因</td>
+<td class="col-long">宁德时代官方英文新闻称其为 CATL chairman and CEO。</td>
+</tr>
+<tr>
+<td class="col-medium">它说明的底层逻辑</td>
+<td class="col-long">行业人物可以帮助理解技术路线、资本战略和产业组织方式。</td>
+</tr>
+<tr>
+<td class="col-medium">新人可学什么</td>
+<td class="col-long">人物不是结论来源，但能帮助新人找到行业叙事和战略变化的入口。</td>
+</tr>
+<tr>
+<td class="col-medium">不应过度推断</td>
+<td class="col-long">不能用单个企业家的观点替代行业证据。</td>
+</tr>
+<tr>
+<td class="col-medium">来源</td>
+<td class="col-long">宁德时代官网</td>
+</tr>
+</tbody>
+</table>
+<h3 id="section-24">学习锚点：电网调度员</h3>
+<table class="report-table table-fit">
+<colgroup>
+  <col class="col-medium" style="width: 34.95%;">
+  <col class="col-long" style="width: 65.05%;">
+</colgroup>
+<thead>
+<tr>
+<th class="col-medium">字段</th>
+<th class="col-long">内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="col-medium">类型</td>
+<td class="col-long">关键角色</td>
+</tr>
+<tr>
+<td class="col-medium">代表性原因</td>
+<td class="col-long">储能是否有价值，最终取决于电力系统何时需要它充放电。</td>
+</tr>
+<tr>
+<td class="col-medium">它说明的底层逻辑</td>
+<td class="col-long">调度逻辑决定储能从“设备”变成“系统资源”。</td>
+</tr>
+<tr>
+<td class="col-medium">新人可学什么</td>
+<td class="col-long">学储能必须理解电网运行，而不是只懂电池参数。</td>
+</tr>
+<tr>
+<td class="col-medium">不应过度推断</td>
+<td class="col-long">调度员是理解角色，不是单一商业主体。</td>
+</tr>
+<tr>
+<td class="col-medium">来源</td>
+<td class="col-long">国家能源局口径与电力系统常识</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>这些对象是学习锚点，不是公司排名，也不是投资建议。</p>
+</blockquote>
+<h2 id="section-25">10. 关键词库与概念关系图</h2>
+<p>关键词是进入行业的语言入口，但真正有用的不是背词，而是知道一个词为什么存在、解决什么问题、在哪里出现、会影响什么判断。下面的关键词卡片会用“通俗理解
+-&gt; 概念阐述 -&gt; 底层逻辑 -&gt; 真实应用”的方式展开。</p>
+<h3 id="section-26">关键词分组</h3>
+<table class="report-table table-fit">
+<colgroup>
+  <col class="col-compact col-short" style="width: 23.39%;">
+  <col class="col-long" style="width: 76.61%;">
+</colgroup>
+<thead>
+<tr>
+<th class="col-compact col-short col-center">模块</th>
+<th class="col-long">关键词</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="col-compact col-short col-center">边界与分类</td>
+<td class="col-long">新型储能、抽水蓄能、独立储能、长时储能</td>
+</tr>
+<tr>
+<td class="col-compact col-short col-center">技术与设备</td>
+<td class="col-long">电芯、PCS、BMS、EMS、液流电池、压缩空气储能</td>
+</tr>
+<tr>
+<td class="col-compact col-short col-center">商业模式</td>
+<td class="col-long">峰谷套利、辅助服务、容量补偿、租赁模式</td>
+</tr>
+<tr>
+<td class="col-compact col-short col-center">运营指标</td>
+<td class="col-long">等效利用小时、可用率、循环寿命、LCOS</td>
+</tr>
+<tr>
+<td class="col-compact col-short col-center">风险</td>
+<td class="col-long">热失控、安全监测、并网验收、价格战</td>
+</tr>
+</tbody>
+</table>
+<h3 id="section-27">关键词卡片</h3>
+<h4 id="关键词新型储能">关键词：新型储能</h4>
+<table class="report-table table-fit">
+<colgroup>
+  <col class="col-medium" style="width: 27.81%;">
+  <col class="col-long" style="width: 72.19%;">
+</colgroup>
+<thead>
+<tr>
+<th class="col-medium">字段</th>
+<th class="col-long">内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="col-medium">一句话通俗理解</td>
+<td class="col-long">新型储能就是电力系统里的“可调度充电宝”，但它服务的是电网和大型用电场景。</td>
+</tr>
+<tr>
+<td class="col-medium">概念阐述</td>
+<td class="col-long">国家能源局口径下，新型储能通常指除传统抽水蓄能以外的新型储能技术，用于充放电和系统调节。</td>
+</tr>
+<tr>
+<td class="col-medium">底层逻辑</td>
+<td class="col-long">风电、光伏出力不稳定，电力系统又必须实时平衡，所以需要一种能在电多时吸收、电少时释放的调节资源。</td>
+</tr>
+<tr>
+<td class="col-medium">所属模块</td>
+<td class="col-long">边界与分类</td>
+</tr>
+<tr>
+<td class="col-medium">作用</td>
+<td class="col-long">决定统计口径、政策适用范围、研究边界和公司筛选范围。</td>
+</tr>
+<tr>
+<td class="col-medium">行业真实示例</td>
+<td class="col-long">锂离子电池储能、液流电池、压缩空气储能、飞轮储能。</td>
+</tr>
+<tr>
+<td class="col-medium">应用场景</td>
+<td class="col-long">新能源基地配储、电网侧独立储能、工商业削峰填谷、微电网。</td>
+</tr>
+<tr>
+<td class="col-medium">可观察指标</td>
+<td class="col-long">装机功率、储能容量、平均储能时长。</td>
+</tr>
+<tr>
+<td class="col-medium">相关概念</td>
+<td class="col-long">抽水蓄能、独立储能、长时储能。</td>
+</tr>
+<tr>
+<td class="col-medium">常见误区</td>
+<td class="col-long">把所有电池产品都算作新型储能。</td>
+</tr>
+<tr>
+<td class="col-medium">证据</td>
+<td class="col-long">国家能源局、国务院英文网。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="关键词独立储能">关键词：独立储能</h4>
+<table class="report-table table-fit">
+<colgroup>
+  <col class="col-medium" style="width: 27.46%;">
+  <col class="col-long" style="width: 72.54%;">
+</colgroup>
+<thead>
+<tr>
+<th class="col-medium">字段</th>
+<th class="col-long">内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="col-medium">一句话通俗理解</td>
+<td class="col-long">独立储能不是某个风光项目的“附属电池”，而是可以单独接受调度、参与市场的电站。</td>
+</tr>
+<tr>
+<td class="col-medium">概念阐述</td>
+<td class="col-long">独立储能是作为独立主体接入电力系统、参与调峰、辅助服务或电力交易的储能资产。</td>
+</tr>
+<tr>
+<td class="col-medium">底层逻辑</td>
+<td class="col-long">如果储能只能跟着某个电源项目使用，价值会被限制；独立出来后，它可以在系统最需要调节能力的地方发挥作用。</td>
+</tr>
+<tr>
+<td class="col-medium">所属模块</td>
+<td class="col-long">应用场景</td>
+</tr>
+<tr>
+<td class="col-medium">作用</td>
+<td class="col-long">说明储能商业模式从“配套建设”向“独立调节资源和市场化收益”移动。</td>
+</tr>
+<tr>
+<td class="col-medium">行业真实示例</td>
+<td class="col-long">参与电力现货、调峰、辅助服务的共享储能或独立储能电站。</td>
+</tr>
+<tr>
+<td class="col-medium">应用场景</td>
+<td class="col-long">电网侧调峰、辅助服务、电力现货价差、容量租赁。</td>
+</tr>
+<tr>
+<td class="col-medium">可观察指标</td>
+<td class="col-long">累计装机占比、等效利用小时、市场收益。</td>
+</tr>
+<tr>
+<td class="col-medium">相关概念</td>
+<td class="col-long">共享储能、电网侧储能、辅助服务。</td>
+</tr>
+<tr>
+<td class="col-medium">常见误区</td>
+<td class="col-long">只看装机，不看是否被调用。</td>
+</tr>
+<tr>
+<td class="col-medium">证据</td>
+<td class="col-long">国家能源局 2026-01-30 发布会。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="关键词pcs">关键词：PCS</h4>
+<table class="report-table table-fit">
+<colgroup>
+  <col class="col-medium" style="width: 29.51%;">
+  <col class="col-long" style="width: 70.49%;">
+</colgroup>
+<thead>
+<tr>
+<th class="col-medium">字段</th>
+<th class="col-long">内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="col-medium">一句话通俗理解</td>
+<td class="col-long">PCS
+像储能系统和电网之间的“翻译器”，把电池能用的电变成电网能接收的电。</td>
+</tr>
+<tr>
+<td class="col-medium">概念阐述</td>
+<td class="col-long">PCS
+是储能变流器，负责电池直流电与电网交流电之间的能量转换和控制。</td>
+</tr>
+<tr>
+<td class="col-medium">底层逻辑</td>
+<td class="col-long">电池和电网的电气形态不同，储能要并网、响应调度、稳定输出，就必须通过
+PCS 做转换和控制。</td>
+</tr>
+<tr>
+<td class="col-medium">所属模块</td>
+<td class="col-long">技术与设备</td>
+</tr>
+<tr>
+<td class="col-medium">作用</td>
+<td class="col-long">影响并网能力、转换效率、响应速度、系统安全和电网友好性。</td>
+</tr>
+<tr>
+<td class="col-medium">行业真实示例</td>
+<td class="col-long">阳光电源等系统厂商在储能系统中把 PCS、锂电池和 EMS
+组合成解决方案。</td>
+</tr>
+<tr>
+<td class="col-medium">应用场景</td>
+<td class="col-long">公用事业侧储能、工商业储能、构网型储能、微电网。</td>
+</tr>
+<tr>
+<td class="col-medium">可观察指标</td>
+<td class="col-long">转换效率、响应时间、故障率。</td>
+</tr>
+<tr>
+<td class="col-medium">相关概念</td>
+<td class="col-long">BMS、EMS、逆变器。</td>
+</tr>
+<tr>
+<td class="col-medium">常见误区</td>
+<td class="col-long">认为储能系统只有电芯重要。</td>
+</tr>
+<tr>
+<td class="col-medium">证据</td>
+<td class="col-long">行业设备资料与并网要求。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="关键词ems">关键词：EMS</h4>
+<table class="report-table table-fit">
+<colgroup>
+  <col class="col-medium" style="width: 30.23%;">
+  <col class="col-long" style="width: 69.77%;">
+</colgroup>
+<thead>
+<tr>
+<th class="col-medium">字段</th>
+<th class="col-long">内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="col-medium">一句话通俗理解</td>
+<td class="col-long">EMS
+是储能电站的大脑，决定什么时候充电、什么时候放电、怎么参与市场。</td>
+</tr>
+<tr>
+<td class="col-medium">概念阐述</td>
+<td class="col-long">EMS 是能量管理系统，用于监控、优化和调度储能系统的运行策略。</td>
+</tr>
+<tr>
+<td class="col-medium">底层逻辑</td>
+<td class="col-long">储能本身不自动赚钱，只有在正确时间、正确场景执行充放电，才会产生系统价值和经济收益。</td>
+</tr>
+<tr>
+<td class="col-medium">所属模块</td>
+<td class="col-long">软件与运营</td>
+</tr>
+<tr>
+<td class="col-medium">作用</td>
+<td class="col-long">连接设备运行、电网调度、电价变化和收益优化。</td>
+</tr>
+<tr>
+<td class="col-medium">行业真实示例</td>
+<td class="col-long">工商业储能用 EMS 做削峰填谷；独立储能用 EMS
+配合调度和交易策略。</td>
+</tr>
+<tr>
+<td class="col-medium">应用场景</td>
+<td class="col-long">电站调度优化、工商业能源管理、电力交易辅助、微电网控制。</td>
+</tr>
+<tr>
+<td class="col-medium">可观察指标</td>
+<td class="col-long">等效利用小时、收益率、可用率。</td>
+</tr>
+<tr>
+<td class="col-medium">相关概念</td>
+<td class="col-long">BMS、SCADA、电力交易。</td>
+</tr>
+<tr>
+<td class="col-medium">常见误区</td>
+<td class="col-long">把 EMS 当作简单监控后台。</td>
+</tr>
+<tr>
+<td class="col-medium">证据</td>
+<td class="col-long">市场化调用和运营需求。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="关键词等效利用小时">关键词：等效利用小时</h4>
+<table class="report-table table-fit">
+<colgroup>
+  <col class="col-medium" style="width: 31.13%;">
+  <col class="col-long" style="width: 68.87%;">
+</colgroup>
+<thead>
+<tr>
+<th class="col-medium">字段</th>
+<th class="col-long">内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="col-medium">一句话通俗理解</td>
+<td class="col-long">等效利用小时告诉你：这个储能电站不是只建在那里，而是真的被用了多久。</td>
+</tr>
+<tr>
+<td class="col-medium">概念阐述</td>
+<td class="col-long">等效利用小时是衡量储能资产实际调用程度和运行强度的指标。</td>
+</tr>
+<tr>
+<td class="col-medium">底层逻辑</td>
+<td class="col-long">储能是资本密集资产，装机越多不等于价值越大；只有被调用、被结算，才可能形成收益。</td>
+</tr>
+<tr>
+<td class="col-medium">所属模块</td>
+<td class="col-long">运营指标</td>
+</tr>
+<tr>
+<td class="col-medium">作用</td>
+<td class="col-long">帮助判断电站利用率、收益潜力和调度价值。</td>
+</tr>
+<tr>
+<td class="col-medium">行业真实示例</td>
+<td class="col-long">国家能源局披露 2025 年全国新型储能等效利用小时数达 1195 小时。</td>
+</tr>
+<tr>
+<td class="col-medium">应用场景</td>
+<td class="col-long">项目投资评估、运营复盘、地方市场规则比较。</td>
+</tr>
+<tr>
+<td class="col-medium">可观察指标</td>
+<td class="col-long">年等效利用小时、充放电次数。</td>
+</tr>
+<tr>
+<td class="col-medium">相关概念</td>
+<td class="col-long">可用率、循环次数、收益率。</td>
+</tr>
+<tr>
+<td class="col-medium">常见误区</td>
+<td class="col-long">装得多就等于用得好。</td>
+</tr>
+<tr>
+<td class="col-medium">证据</td>
+<td class="col-long">国家能源局 2026-01-30 发布会。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="关键词长时储能">关键词：长时储能</h4>
+<table class="report-table table-fit">
+<colgroup>
+  <col class="col-medium" style="width: 28.33%;">
+  <col class="col-long" style="width: 71.67%;">
+</colgroup>
+<thead>
+<tr>
+<th class="col-medium">字段</th>
+<th class="col-long">内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="col-medium">一句话通俗理解</td>
+<td class="col-long">长时储能像更大容量、更能扛时间的“电力缓冲垫”，用来处理更长周期的供需错配。</td>
+</tr>
+<tr>
+<td class="col-medium">概念阐述</td>
+<td class="col-long">长时储能通常指持续放电时间更长、服务更长周期电力平衡的储能方案。</td>
+</tr>
+<tr>
+<td class="col-medium">底层逻辑</td>
+<td class="col-long">当新能源占比越来越高，系统不仅需要分钟级和小时级调节，也需要跨更长时段的能量搬移能力。</td>
+</tr>
+<tr>
+<td class="col-medium">所属模块</td>
+<td class="col-long">技术趋势</td>
+</tr>
+<tr>
+<td class="col-medium">作用</td>
+<td class="col-long">影响技术路线选择、电网调节能力规划和未来投资方向。</td>
+</tr>
+<tr>
+<td class="col-medium">行业真实示例</td>
+<td class="col-long">4小时及以上储能项目、液流电池、压缩空气储能。</td>
+</tr>
+<tr>
+<td class="col-medium">应用场景</td>
+<td class="col-long">新能源基地、弱电网区域、长周期调峰、容量资源补充。</td>
+</tr>
+<tr>
+<td class="col-medium">可观察指标</td>
+<td class="col-long">4小时及以上项目占比、单位容量成本、效率。</td>
+</tr>
+<tr>
+<td class="col-medium">相关概念</td>
+<td class="col-long">短时储能、调峰、容量资源。</td>
+</tr>
+<tr>
+<td class="col-medium">常见误区</td>
+<td class="col-long">认为长时储能会立刻替代锂电短时储能。</td>
+</tr>
+<tr>
+<td class="col-medium">证据</td>
+<td class="col-long">国家能源局 2025 年底 4小时及以上项目占比数据。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="section-28">概念关系图</h3>
+<pre class="mermaid"><code>graph LR
+  A[&quot;新能源高占比&quot;] --&gt; B[&quot;电力系统波动增加&quot;]
+  B --&gt; C[&quot;调节能力需求&quot;]
+  C --&gt; D[&quot;新型储能&quot;]
+  D --&gt; E[&quot;设备价值链&quot;]
+  D --&gt; F[&quot;电站运营&quot;]
+  F --&gt; G[&quot;调度与电力市场收益&quot;]
+  G --&gt; H[&quot;等效利用小时与项目回报&quot;]</code></pre>
+<h2 id="section-29">11. 专家学习教程</h2>
+<p>前面是研究报告式的展开，这一节把它改写成学习路径。你可以按模块逐步学习，也可以把它当成团队新人培训的大纲：每一行都对应一个学习目标、核心概念、练习和检查标准。</p>
+<table class="report-table table-fit">
+<colgroup>
+  <col class="col-compact col-short" style="width: 7.61%;">
+  <col class="col-medium" style="width: 13.05%;">
+  <col class="col-long" style="width: 19.43%;">
+  <col class="col-long" style="width: 42.06%;">
+  <col class="col-long" style="width: 17.85%;">
+</colgroup>
+<thead>
+<tr>
+<th class="col-compact col-short col-center">模块</th>
+<th class="col-medium">学习目标</th>
+<th class="col-long">核心概念</th>
+<th class="col-long">通俗示例与练习</th>
+<th class="col-long">成功检查</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="col-compact col-short col-center">1. 定义与边界</td>
+<td class="col-medium">知道新型储能是什么</td>
+<td class="col-long">新型储能、抽水蓄能、应用场景</td>
+<td class="col-long">把新型储能理解成电网级“充电宝”，但要补充它需要调度和并网规则；练习：用3句话解释新型储能。</td>
+<td class="col-long">不把动力电池和储能电站混为一谈</td>
+</tr>
+<tr>
+<td class="col-compact col-short col-center">2. 价值链</td>
+<td class="col-medium">看懂谁参与、谁赚钱</td>
+<td class="col-long">电芯、PCS、BMS、EMS、集成、运营</td>
+<td class="col-long">宁德时代更偏电芯和系统能力，阳光电源更能说明
+PCS/系统集成逻辑；练习：画一张从电芯到电站收益的链条。</td>
+<td class="col-long">能说出至少5类企业角色</td>
+</tr>
+<tr>
+<td class="col-compact col-short col-center">3. 技术路线</td>
+<td class="col-medium">理解主流和替代</td>
+<td class="col-long">锂电、液流、压缩空气、长时储能</td>
+<td class="col-long">锂电像成熟主力车型，液流/压缩空气像特定长途场景的候选方案；练习：比较锂电和液流适合的场景。</td>
+<td class="col-long">能解释为什么锂电主导但长时储能值得看</td>
+</tr>
+<tr>
+<td class="col-compact col-short col-center">4. 商业模式</td>
+<td class="col-medium">理解收益来自哪里</td>
+<td class="col-long">峰谷套利、辅助服务、容量补偿</td>
+<td class="col-long">独立储能像“电网调节服务商”，不是只卖设备；练习：分析一个独立储能项目的收入来源。</td>
+<td class="col-long">不只看装机规模</td>
+</tr>
+<tr>
+<td class="col-compact col-short col-center">5. 风险判断</td>
+<td class="col-medium">识别行业不确定性</td>
+<td class="col-long">安全、利用小时、价格战、市场机制</td>
+<td class="col-long">等效利用小时像出租车的载客时长，车买了不跑就没有收入；练习：列出3个投资或创业风险。</td>
+<td class="col-long">每个风险能给出观察指标</td>
+</tr>
+</tbody>
+</table>
+<h2 id="section-30">12. 费曼问题、参考答案与评分</h2>
+<p>如果一个概念不能用自己的话讲出来，通常说明还没有真正理解。下面的问题不是为了考试，而是为了暴露理解断点。回答时尽量少堆术语，多用例子、因果关系和反例。</p>
+<table style="width:100%;" class="report-table table-fit">
+<colgroup>
+  <col class="col-compact col-number" style="width: 6.64%;">
+  <col class="col-medium" style="width: 21.74%;">
+  <col class="col-long" style="width: 63.16%;">
+  <col class="col-compact col-number" style="width: 8.46%;">
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: right;" class="col-compact col-number col-center">题号</th>
+<th class="col-medium">问题</th>
+<th class="col-long">参考答案要点</th>
+<th class="col-compact col-number col-center">评分标准</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;" class="col-compact col-number col-center">1</td>
+<td class="col-medium">用3句话解释新型储能行业。</td>
+<td class="col-long">除抽水蓄能外的储能技术；服务电力系统调节；价值来自新能源消纳、保供和市场收益。</td>
+<td class="col-compact col-number col-center">0-5</td>
+</tr>
+<tr>
+<td style="text-align: right;" class="col-compact col-number col-center">2</td>
+<td class="col-medium">新型储能和动力电池行业有什么不同。</td>
+<td class="col-long">应用对象、客户、评价指标、商业模式不同。</td>
+<td class="col-compact col-number col-center">0-5</td>
+</tr>
+<tr>
+<td style="text-align: right;" class="col-compact col-number col-center">3</td>
+<td class="col-medium">画出储能价值链。</td>
+<td class="col-long">电芯/设备、系统集成、建设、并网、运营、交易、运维。</td>
+<td class="col-compact col-number col-center">0-5</td>
+</tr>
+<tr>
+<td style="text-align: right;" class="col-compact col-number col-center">4</td>
+<td class="col-medium">为什么独立储能重要。</td>
+<td class="col-long">它把储能从配套资产变成可被调度和交易的独立资源。</td>
+<td class="col-compact col-number col-center">0-5</td>
+</tr>
+<tr>
+<td style="text-align: right;" class="col-compact col-number col-center">5</td>
+<td class="col-medium">行业处在什么生命周期阶段。</td>
+<td class="col-long">整体成长期；短时锂电成熟度更高；长时储能偏早期。</td>
+<td class="col-compact col-number col-center">0-5</td>
+</tr>
+<tr>
+<td style="text-align: right;" class="col-compact col-number col-center">6</td>
+<td class="col-medium">利润或价值可能集中在哪里。</td>
+<td class="col-long">设备规模化、软件调度、交易运营、安全运维、项目开发。</td>
+<td class="col-compact col-number col-center">0-5</td>
+</tr>
+<tr>
+<td style="text-align: right;" class="col-compact col-number col-center">7</td>
+<td class="col-medium">进入这个行业最难的3件事是什么。</td>
+<td class="col-long">安全可靠性、项目资源和资质、电力市场收益理解。</td>
+<td class="col-compact col-number col-center">0-5</td>
+</tr>
+<tr>
+<td style="text-align: right;" class="col-compact col-number col-center">8</td>
+<td class="col-medium">如果创业，你会选哪个切入点。</td>
+<td class="col-long">示例：EMS/交易运营、安全监测、工商业储能运维；理由需匹配能力和客户。</td>
+<td class="col-compact col-number col-center">0-5</td>
+</tr>
+<tr>
+<td style="text-align: right;" class="col-compact col-number col-center">9</td>
+<td class="col-medium">未来3年最大变量是什么。</td>
+<td class="col-long">市场化调用和收益机制；跟踪利用小时、地方规则、辅助服务收益。</td>
+<td class="col-compact col-number col-center">0-5</td>
+</tr>
+<tr>
+<td style="text-align: right;" class="col-compact col-number col-center">10</td>
+<td class="col-medium">用外行类比解释。</td>
+<td class="col-long">储能像电网的“充电宝”，但比充电宝复杂，因为它要服从调度、安全和市场规则。</td>
+<td class="col-compact col-number col-center">0-5</td>
+</tr>
+</tbody>
+</table>
+<h2 id="section-31">13. 机会、风险与验证清单</h2>
+<p>理解行业以后，需要把学习转成下一步行动。这里把机会、风险和待验证问题放在一起，是为了提醒读者：有些判断可以作为方向，有些判断必须先找到项目、价格、规则或客户证据。</p>
+<table class="report-table table-fit">
+<colgroup>
+  <col class="col-compact col-short" style="width: 17.10%;">
+  <col class="col-medium" style="width: 29.32%;">
+  <col class="col-compact col-number" style="width: 8.96%;">
+  <col class="col-long" style="width: 44.62%;">
+</colgroup>
+<thead>
+<tr>
+<th class="col-compact col-short col-center">类型</th>
+<th class="col-medium">内容</th>
+<th class="col-compact col-number col-center">优先级</th>
+<th class="col-long">下一步验证</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="col-compact col-short col-center">机会</td>
+<td class="col-medium">EMS、交易运营、安全监测、运维服务</td>
+<td class="col-compact col-number col-center">高</td>
+<td class="col-long">找3个省份比较电力市场规则</td>
+</tr>
+<tr>
+<td class="col-compact col-short col-center">机会</td>
+<td class="col-medium">工商业储能的场景化方案</td>
+<td class="col-compact col-number col-center">中</td>
+<td class="col-long">核算峰谷价差和用户负荷曲线</td>
+</tr>
+<tr>
+<td class="col-compact col-short col-center">风险</td>
+<td class="col-medium">只看装机，不看调用</td>
+<td class="col-compact col-number col-center">高</td>
+<td class="col-long">跟踪等效利用小时和收益结算</td>
+</tr>
+<tr>
+<td class="col-compact col-short col-center">风险</td>
+<td class="col-medium">价格战压低设备质量</td>
+<td class="col-compact col-number col-center">中</td>
+<td class="col-long">看质保、事故、验收和退役数据</td>
+</tr>
+<tr>
+<td class="col-compact col-short col-center">待验证</td>
+<td class="col-medium">长时储能经济性</td>
+<td class="col-compact col-number col-center">高</td>
+<td class="col-long">比较 4小时以上项目的成本和应用场景</td>
+</tr>
+</tbody>
+</table>
+<h2 id="section-32">14. 不确定性日志</h2>
+<p>行业研究里有些问题暂时无法给出确定答案。与其假装确定，不如把不确定性单独列出来，说明为什么不确定、缺什么证据、下一步应该怎么验证。</p>
+<table class="report-table table-fit">
+<colgroup>
+  <col class="col-medium" style="width: 25.00%;">
+  <col class="col-medium" style="width: 25.00%;">
+  <col class="col-medium" style="width: 25.00%;">
+  <col class="col-medium" style="width: 25.00%;">
+</colgroup>
+<thead>
+<tr>
+<th class="col-medium">问题</th>
+<th class="col-medium">为什么不确定</th>
+<th class="col-medium">需要什么证据</th>
+<th class="col-medium">建议验证方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="col-medium">独立储能项目真实收益率</td>
+<td class="col-medium">地方市场规则和调用频率差异大</td>
+<td class="col-medium">项目收益结算、辅助服务价格</td>
+<td class="col-medium">做省份案例拆解</td>
+</tr>
+<tr>
+<td class="col-medium">长时储能商业化速度</td>
+<td class="col-medium">技术路线和成本仍在变化</td>
+<td class="col-medium">示范项目运行数据</td>
+<td class="col-medium">跟踪 4小时以上项目招标和运行</td>
+</tr>
+<tr>
+<td class="col-medium">设备价格战对安全的影响</td>
+<td class="col-medium">公开事故和质量数据有限</td>
+<td class="col-medium">事故、召回、验收失败数据</td>
+<td class="col-medium">结合监管通报和保险数据</td>
+</tr>
+</tbody>
+</table>
+<h2 id="section-33">15. 参考资料</h2>
+<p>参考资料不是装饰，它决定了报告里哪些内容更可信。这里把主要来源放在最后，方便读者继续追溯原始材料，也方便检查关键判断的证据基础。</p>
+<table class="report-table table-fit">
+<colgroup>
+  <col class="col-long" style="width: 30.29%;">
+  <col class="col-long" style="width: 21.31%;">
+  <col class="col-medium" style="width: 15.98%;">
+  <col class="col-long" style="width: 23.09%;">
+  <col class="col-compact col-short" style="width: 9.33%;">
+</colgroup>
+<thead>
+<tr>
+<th class="col-long">来源</th>
+<th class="col-long">发布方</th>
+<th class="col-medium">日期</th>
+<th class="col-long">用途</th>
+<th class="col-compact col-short col-center">置信度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="col-long"><a
+href="https://www.nea.gov.cn/20260130/50f657ce87f848e1a9a1861d1fd9aa23/c.html">国家能源局举行新闻发布会介绍2025年新型储能发展情况</a></td>
+<td class="col-long">国家能源局</td>
+<td class="col-medium">2026-01-30</td>
+<td class="col-long">2025 年装机、技术占比、场景、利用小时</td>
+<td class="col-compact col-short col-center">high</td>
+</tr>
+<tr>
+<td class="col-long"><a
+href="https://english.www.gov.cn/archive/statistics/202501/24/content_WS6793830cc6d0868f4e8ef23f.html">China’s
+new energy storage capacity exceeds 70 million KW</a></td>
+<td class="col-long">中国政府网英文版</td>
+<td class="col-medium">2025-01-24</td>
+<td class="col-long">新型储能定义、2024 年装机与投资信号</td>
+<td class="col-compact col-short col-center">high</td>
+</tr>
+<tr>
+<td class="col-long"><a
+href="https://app.www.gov.cn/govdata/gov/202509/12/536503/article.html">《新型储能规模化建设专项行动方案（2025—2027年）》通知</a></td>
+<td class="col-long">国家发展改革委、国家能源局</td>
+<td class="col-medium">2025-09-12</td>
+<td class="col-long">政策方向和 2025-2027 窗口</td>
+<td class="col-compact col-short col-center">high</td>
+</tr>
+<tr>
+<td class="col-long"><a
+href="https://www.nea.gov.cn/20250731/1d40d09f75714280a9218d5bea178fbd/202507311d40d09f75714280a9218d5bea178fbd_453d9a0609da1d4456a8b12d843bd256cf.pdf">中国新型储能发展报告2025</a></td>
+<td class="col-long">国家能源局能源节约和科技装备司、电力规划设计总院</td>
+<td class="col-medium">2025-07-31</td>
+<td class="col-long">政策脉络、标准、安全和技术路线</td>
+<td class="col-compact col-short col-center">high</td>
+</tr>
+<tr>
+<td class="col-long"><a
+href="https://www.catl.com/about/profile/">宁德时代企业简介</a></td>
+<td class="col-long">宁德时代</td>
+<td class="col-medium">访问日期 2026-06-03</td>
+<td class="col-long">典型公司和储能系统业务锚点</td>
+<td class="col-compact col-short col-center">medium</td>
+</tr>
+<tr>
+<td class="col-long"><a href="https://www.bydenergy.com/index/">比亚迪储能官网</a></td>
+<td class="col-long">比亚迪储能</td>
+<td class="col-medium">访问日期 2026-06-03</td>
+<td class="col-long">源网侧、工商业、微电网等场景锚点</td>
+<td class="col-compact col-short col-center">medium</td>
+</tr>
+<tr>
+<td class="col-long"><a href="https://www.sungrowpower.com/en/ess">Sungrow Energy Storage
+System</a></td>
+<td class="col-long">阳光电源 Sungrow</td>
+<td class="col-medium">访问日期 2026-06-03</td>
+<td class="col-long">PCS、锂电池、EMS 和系统集成锚点</td>
+<td class="col-compact col-short col-center">medium</td>
+</tr>
+<tr>
+<td class="col-long"><a
+href="https://www.es.csg.cn/">南方电网储能股份有限公司官网</a></td>
+<td class="col-long">南网储能</td>
+<td class="col-medium">访问日期 2026-06-03</td>
+<td class="col-long">电站运营平台锚点</td>
+<td class="col-compact col-short col-center">medium</td>
+</tr>
+<tr>
+<td class="col-long"><a href="https://www.catl.com/en/news/6202.html">CATL: Robin Zeng at
+World Economic Forum</a></td>
+<td class="col-long">宁德时代</td>
+<td class="col-medium">2024-01</td>
+<td class="col-long">代表人物锚点</td>
+<td class="col-compact col-short col-center">medium</td>
+</tr>
+</tbody>
+</table>
+
+  </main>
+  <script>
+  (function () {
+    const links = Array.from(document.querySelectorAll('.nav-links a'));
+    const sections = links
+      .map((link) => document.querySelector(link.getAttribute('href')))
+      .filter(Boolean);
+    if (!('IntersectionObserver' in window) || sections.length === 0) return;
+    const byId = new Map(links.map((link) => [link.getAttribute('href').slice(1), link]));
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const link = byId.get(entry.target.id);
+        if (!link) return;
+        if (entry.isIntersecting) {
+          links.forEach((item) => item.removeAttribute('aria-current'));
+          link.setAttribute('aria-current', 'true');
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px', threshold: 0.01 });
+    sections.forEach((section) => observer.observe(section));
+  })();
+  </script>
+</body>
+</html>

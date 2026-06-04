@@ -1,6 +1,6 @@
 {
   "repo_name": "yao-open-skills",
-  "updated_at": "2026-05-27",
+  "updated_at": "2026-06-04",
   "skills": [
     {
       "slug": "learning-builder",
@@ -116,6 +116,31 @@
       ],
       "last_synced_at": "2026-05-27",
       "updated_at": "2026-05-27"
+    },
+    {
+      "slug": "yao-expert-skill",
+      "title": "Yao Expert Skill",
+      "summary": "Turn any domain, industry, technology, market, role, product direction, or fuzzy idea into a source-backed expert learning report and tutorial with keyword teaching cards, representative anchors, Feynman self-tests, and Markdown/DOCX/PDF/HTML exports.",
+      "source_local_path": "/Users/laoyao/AI Coding/03-Development/Skills/yao-expert-skill",
+      "collection_path": "skills/yao-expert-skill",
+      "lifecycle": "active",
+      "sync_status": "published",
+      "github_repo": "yao-open-skills",
+      "github_url": "https://github.com/yaojingang/yao-open-skills/tree/main/skills/yao-expert-skill",
+      "guide_path": "docs/skills/yao-expert-skill.md",
+      "license": "MIT",
+      "tags": [
+        "expert-learning",
+        "research",
+        "industry-analysis",
+        "tutorials",
+        "keywords",
+        "docx",
+        "pdf",
+        "html"
+      ],
+      "last_synced_at": "2026-06-04",
+      "updated_at": "2026-06-04"
     },
     {
       "slug": "yao-gametheory-skill",
